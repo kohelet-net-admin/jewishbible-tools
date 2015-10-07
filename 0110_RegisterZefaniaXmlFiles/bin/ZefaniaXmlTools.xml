@@ -22,5 +22,1109 @@ ZefaniaXmlTools
   Ressourcenzuordnungen, die diese stark typisierte Ressourcenklasse verwenden.
 </summary>
 </member>
+<member name="T:KoheletNetwork.ZefaniaXml2005.XMLBIBLE">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2005.XMLBIBLE.INFORMATION">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2005.XMLBIBLE.BIBLEBOOK">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2005.XMLBIBLE.APPINFO">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2005.XMLBIBLE.biblename">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2005.XMLBIBLE.status">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2005.XMLBIBLE.statusSpecified">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2005.XMLBIBLE.version">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2005.XMLBIBLE.revision">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2005.XMLBIBLE.type">
+<remarks/>
+</member>
+<member name="T:KoheletNetwork.ZefaniaXml2005.INFORMATION">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2005.INFORMATION.Items">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2005.INFORMATION.ItemsElementName">
+<remarks/>
+</member>
+<member name="T:KoheletNetwork.ZefaniaXml2005.ItemsChoiceType">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.ItemsChoiceType.contributors">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.ItemsChoiceType.coverage">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.ItemsChoiceType.creator">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.ItemsChoiceType.date">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.ItemsChoiceType.description">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.ItemsChoiceType.format">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.ItemsChoiceType.identifier">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.ItemsChoiceType.language">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.ItemsChoiceType.publisher">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.ItemsChoiceType.rights">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.ItemsChoiceType.source">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.ItemsChoiceType.subject">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.ItemsChoiceType.title">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.ItemsChoiceType.type">
+<remarks/>
+</member>
+<member name="T:KoheletNetwork.ZefaniaXml2005.BIBLEBOOK">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2005.BIBLEBOOK.Items">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2005.BIBLEBOOK.bnumber">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2005.BIBLEBOOK.bname">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2005.BIBLEBOOK.bsname">
+<remarks/>
+</member>
+<member name="T:KoheletNetwork.ZefaniaXml2005.CHAPTER">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2005.CHAPTER.Items">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2005.CHAPTER.cnumber">
+<remarks/>
+</member>
+<member name="T:KoheletNetwork.ZefaniaXml2005.CAPTION">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2005.CAPTION.Items">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2005.CAPTION.Text">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2005.CAPTION.vref">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2005.CAPTION.count">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2005.CAPTION.type">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2005.CAPTION.typeSpecified">
+<remarks/>
+</member>
+<member name="T:KoheletNetwork.ZefaniaXml2005.BR">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2005.BR.art">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2005.BR.count">
+<remarks/>
+</member>
+<member name="T:KoheletNetwork.ZefaniaXml2005.BreakType">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.BreakType.xnl">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.BreakType.xp">
+<remarks/>
+</member>
+<member name="T:KoheletNetwork.ZefaniaXml2005.GRAM">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2005.GRAM.Items">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2005.GRAM.Text">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2005.GRAM.str">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2005.GRAM.rmac">
+<remarks/>
+</member>
+<member name="T:KoheletNetwork.ZefaniaXml2005.STYLE">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2005.STYLE.Items">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2005.STYLE.Text">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2005.STYLE.css">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2005.STYLE.id">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2005.STYLE.fs">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2005.STYLE.fsSpecified">
+<remarks/>
+</member>
+<member name="T:KoheletNetwork.ZefaniaXml2005.SUP">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2005.SUP.Items">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2005.SUP.Text">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2005.SUP.art">
+<remarks/>
+</member>
+<member name="T:KoheletNetwork.ZefaniaXml2005.SupType">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.SupType.xsup">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.SupType.xsub">
+<remarks/>
+</member>
+<member name="T:KoheletNetwork.ZefaniaXml2005.TStyleFix">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.TStyleFix.acrostic">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.TStyleFix.bold">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.TStyleFix.emphasis">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.TStyleFix.illuminated">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.TStyleFix.italic">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.TStyleFix.linethrough">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.TStyleFix.normal">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.TStyleFix.smallcaps">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.TStyleFix.sub">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.TStyleFix.super">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.TStyleFix.underline">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.TStyleFix.overline">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.TStyleFix.capitalize">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.TStyleFix.uppercase">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.TStyleFix.lowercase">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.TStyleFix.divineName">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.TStyleFix.small">
+<remarks/>
+</member>
+<member name="T:KoheletNetwork.ZefaniaXml2005.XREF">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2005.XREF.vef">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2005.XREF.aix">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2005.XREF.fscope">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2005.XREF.Text">
+<remarks/>
+</member>
+<member name="T:KoheletNetwork.ZefaniaXml2005.CaptionType">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.CaptionType.xh1">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.CaptionType.xh2">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.CaptionType.xh3">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.CaptionType.xh4">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.CaptionType.xh5">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.CaptionType.xh6">
+<remarks/>
+</member>
+<member name="T:KoheletNetwork.ZefaniaXml2005.TMedia">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2005.TMedia.title">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2005.TMedia.type">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2005.TMedia.typeSpecified">
+<remarks/>
+</member>
+<member name="T:KoheletNetwork.ZefaniaXml2005.MediaType">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.MediaType.mvideo">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.MediaType.maudio">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.MediaType.mpicture">
+<remarks/>
+</member>
+<member name="T:KoheletNetwork.ZefaniaXml2005.PROLOG">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2005.PROLOG.Items">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2005.PROLOG.Text">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2005.PROLOG.vref">
+<remarks/>
+</member>
+<member name="T:KoheletNetwork.ZefaniaXml2005.REMARK">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2005.REMARK.Items">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2005.REMARK.Text">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2005.REMARK.vref">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2005.REMARK.art">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2005.REMARK.aix">
+<remarks/>
+</member>
+<member name="T:KoheletNetwork.ZefaniaXml2005.VERS">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2005.VERS.Items">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2005.VERS.Text">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2005.VERS.vnumber">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2005.VERS.v">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2005.VERS.e">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2005.VERS.aix">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2005.VERS.p">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2005.VERS.pSpecified">
+<remarks/>
+</member>
+<member name="T:KoheletNetwork.ZefaniaXml2005.NOTE">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2005.NOTE.Items">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2005.NOTE.Text">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2005.NOTE.type">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2005.NOTE.typeSpecified">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2005.NOTE.n1">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2005.NOTE.n1Specified">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2005.NOTE.n2">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2005.NOTE.n2Specified">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2005.NOTE.n3">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2005.NOTE.n3Specified">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2005.NOTE.n4">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2005.NOTE.n4Specified">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2005.NOTE.n5">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2005.NOTE.n5Specified">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2005.NOTE.ex">
+<remarks/>
+</member>
+<member name="T:KoheletNetwork.ZefaniaXml2005.TNotesFix">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.TNotesFix.xstudynote">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.TNotesFix.nstudynote">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.TNotesFix.added">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.TNotesFix.allusion">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.TNotesFix.alternative">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.TNotesFix.background">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.TNotesFix.citation">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.TNotesFix.crossReference">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.TNotesFix.devotional">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.TNotesFix.encoder">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.TNotesFix.exegesis">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.TNotesFix.explanation">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.TNotesFix.liturgical">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.TNotesFix.speaker">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.TNotesFix.study">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.TNotesFix.translation">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.TNotesFix.variant">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.TNotesFix.amplified">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.TNotesFix.changed">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.TNotesFix.deleted">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.TNotesFix.implied">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.TNotesFix.moved">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.TNotesFix.tenseChange">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.TNotesFix.commentary">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.TNotesFix.exposition">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.TNotesFix.meditation">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.TNotesFix.outline">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.TNotesFix.rebuttal">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.TNotesFix.sermon">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.TNotesFix.studyGuide">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.TNotesFix.translation1">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.TNotesFix.transChange">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.TNotesFix.tr">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.TNotesFix.trao">
+<remarks/>
+</member>
+<member name="T:KoheletNetwork.ZefaniaXml2005.APPINFO">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2005.APPINFO.Any">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2005.APPINFO.appid">
+<remarks/>
+</member>
+<member name="T:KoheletNetwork.ZefaniaXml2005.ModuleStatus">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.ModuleStatus.v">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.ModuleStatus.w">
+<remarks/>
+</member>
+<member name="T:KoheletNetwork.ZefaniaXml2005.ModuleType">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.ModuleType.xbible">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.ModuleType.xquran">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.ModuleType.xmormon">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.ModuleType.xother">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2005.ModuleType.xcult">
+<remarks/>
+</member>
+<member name="T:KoheletNetwork.ZefaniaXml2014.xmlbible">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2014.xmlbible.prolog">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2014.xmlbible.biblebook">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2014.xmlbible.language">
+<remarks/>
+</member>
+<member name="T:KoheletNetwork.ZefaniaXml2014.biblebook">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2014.biblebook.prolog">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2014.biblebook.chapter">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2014.biblebook.book">
+<remarks/>
+</member>
+<member name="T:KoheletNetwork.ZefaniaXml2014.chapter">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2014.chapter.Items">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2014.chapter.ItemsElementName">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2014.chapter.book">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2014.chapter.cn">
+<remarks/>
+</member>
+<member name="T:KoheletNetwork.ZefaniaXml2014.paragraph">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2014.paragraph.Items">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2014.paragraph.ItemsElementName">
+<remarks/>
+</member>
+<member name="T:KoheletNetwork.ZefaniaXml2014.verse">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2014.verse.Items">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2014.verse.Text">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2014.verse.book">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2014.verse.cn">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2014.verse.vn">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2014.verse.ix">
+<remarks/>
+</member>
+<member name="T:KoheletNetwork.ZefaniaXml2014.emphasis">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2014.emphasis.Items">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2014.emphasis.Text">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2014.emphasis.id">
+<remarks/>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXml2014.emphasis.xd">
+<remarks/>
+</member>
+<member name="T:KoheletNetwork.ZefaniaXml2014.TEmphasis">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TEmphasis.acrostic">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TEmphasis.bold">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TEmphasis.lookup">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TEmphasis.crossreference">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TEmphasis.illuminated">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TEmphasis.italic">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TEmphasis.linethrough">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TEmphasis.normal">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TEmphasis.smallcaps">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TEmphasis.sub">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TEmphasis.super">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TEmphasis.underline">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TEmphasis.overline">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TEmphasis.capitalize">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TEmphasis.uppercase">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TEmphasis.lowercase">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TEmphasis.divineName">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TEmphasis.small">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TEmphasis.added">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TEmphasis.allusion">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TEmphasis.alternative">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TEmphasis.background">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TEmphasis.citation">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TEmphasis.devotional">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TEmphasis.encoder">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TEmphasis.exegesis">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TEmphasis.explanation">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TEmphasis.liturgical">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TEmphasis.speaker">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TEmphasis.study">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TEmphasis.translation">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TEmphasis.variant">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TEmphasis.amplified">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TEmphasis.changed">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TEmphasis.deleted">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TEmphasis.implied">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TEmphasis.moved">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TEmphasis.tenseChange">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TEmphasis.commentary">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TEmphasis.exposition">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TEmphasis.meditation">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TEmphasis.outline">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TEmphasis.rebuttal">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TEmphasis.sermon">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TEmphasis.studyGuide">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TEmphasis.transChange">
+<remarks/>
+</member>
+<member name="T:KoheletNetwork.ZefaniaXml2014.TBooks">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.GEN">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.EXO">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.LEV">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.NUM">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.DEU">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.JOS">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.JDG">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.RUT">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.Item1SA">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.Item2SA">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.Item1KI">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.Item2KI">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.Item1CH">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.Item2CH">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.EZR">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.NEH">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.EST">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.JOB">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.PSA">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.PRO">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.ECC">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.SNG">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.ISA">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.JER">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.LAM">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.EZK">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.DAN">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.HOS">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.JOL">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.AMO">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.OBA">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.JON">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.MIC">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.NAM">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.HAB">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.ZEP">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.HAG">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.ZEC">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.MAL">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.MAT">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.MRK">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.LUK">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.JHN">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.ACT">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.ROM">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.Item1CO">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.Item2CO">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.GAL">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.EPH">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.PHP">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.COL">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.Item1TH">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.Item2TH">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.Item1TI">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.Item2TI">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.TIT">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.PHM">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.HEB">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.JAS">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.Item1PE">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.Item2PE">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.Item1JN">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.Item2JN">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.Item3JN">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.JUD">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.REV">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.TOB">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.JDT">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.ESG">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.ADE">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.WIS">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.SIR">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.BAR">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.LJE">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.DAG">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.S3Y">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.SUS">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.BEL">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.Item1MA">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.Item2MA">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.Item3MA">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.Item4MA">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.MAN">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.Item1ES">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.Item2ES">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.PS2">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.ODA">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.PSS">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.JSA">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.JDB">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.TBS">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.SST">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.DNT">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.TBooks.BLT">
+<remarks/>
+</member>
+<member name="T:KoheletNetwork.ZefaniaXml2014.ItemsChoiceType">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.ItemsChoiceType.headline">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.ItemsChoiceType.remark">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.ItemsChoiceType.verse">
+<remarks/>
+</member>
+<member name="T:KoheletNetwork.ZefaniaXml2014.ItemsChoiceType1">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.ItemsChoiceType1.headline">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.ItemsChoiceType1.paragraph">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.ItemsChoiceType1.prolog">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.ItemsChoiceType1.remark">
+<remarks/>
+</member>
+<member name="F:KoheletNetwork.ZefaniaXml2014.ItemsChoiceType1.verse">
+<remarks/>
+</member>
 </members>
 </doc>

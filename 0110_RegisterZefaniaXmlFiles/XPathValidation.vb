@@ -11,13 +11,14 @@ Class XPathValidation
         HasErrors = 2
     End Enum
 
-    Shared Function ValidateXml(schemaFile As String, xmlFile As String) As ValidationResult
+    Shared Function ValidateXml(targetNamespace As String, schemaFile As String, xmlFile As String) As ValidationResult
+        Dim reader As XmlReader = Nothing
         Try
             Dim settings As XmlReaderSettings = New XmlReaderSettings()
-            settings.Schemas.Add("http://www.bgfdb.de/zefaniaxml/2014/", schemaFile)
+            settings.Schemas.Add(targetNamespace, schemaFile)
             settings.ValidationType = ValidationType.Schema
 
-            Dim reader As XmlReader = XmlReader.Create(xmlFile, settings)
+            reader = XmlReader.Create(xmlFile, settings)
             Dim document As XmlDocument = New XmlDocument()
             document.Load(reader)
 
@@ -26,6 +27,11 @@ Class XPathValidation
         Catch ex As Exception
             ValidationErrors.Add(ex)
             Return ValidationResult.HasErrors
+        Finally
+            If Not reader Is Nothing Then
+                reader.Close()
+                reader.Dispose()
+            End If
         End Try
         If ValidationErrors.Count > 0 Then
             Return ValidationResult.HasErrors
