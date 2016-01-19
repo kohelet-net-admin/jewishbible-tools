@@ -67,7 +67,6 @@ Module Module1
                     XmlFile("ZefaniaBibleInfoIdentifier") = ZefaniaData.BibleInfoIdentifier
                     If CompuMaster.Data.Utils.NoDBNull(XmlFile("MD5-Hash"), "") = "" Then XmlFile("MD5-Hash") = MD5FileHash(FullXmlFilePath)
                     XmlFile("IsValidXml") = System.Enum.GetName(GetType(XPathValidation.ValidationResult), XPathValidation.ValidateXml("http://www.bgfdb.de/zefaniaxml/2014/", XsdSchemaFile, FullXmlFilePath))
-                    If ZefaniaData.BibleName.StartsWith("D") Then Exit For
                 End If
                 'Zef1014Deserializer.Main(FullXmlFilePath)
             Next
