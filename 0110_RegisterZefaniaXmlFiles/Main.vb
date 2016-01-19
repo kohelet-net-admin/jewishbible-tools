@@ -42,6 +42,7 @@ Module Module1
             EnsureAvailableStringColumn(xmlFiles, "ZefaniaBibleType")
             EnsureAvailableStringColumn(xmlFiles, "ZefaniaBibleInfoTitle")
             EnsureAvailableStringColumn(xmlFiles, "ZefaniaBibleInfoIdentifier")
+            EnsureAvailableStringColumn(xmlFiles, "MD5-Hash")
             EnsureAvailableStringColumn(xmlFiles, "Warnings")
             'Dim xmlFiles As String() = System.IO.File.ReadAllLines(XmlIndexFile)
             For Each XmlFile As DataRow In xmlFiles.Rows
@@ -64,8 +65,9 @@ Module Module1
                     XmlFile("ZefaniaBibleType") = ZefaniaData.BibleType
                     XmlFile("ZefaniaBibleInfoTitle") = ZefaniaData.BibleInfoTitle
                     XmlFile("ZefaniaBibleInfoIdentifier") = ZefaniaData.BibleInfoIdentifier
-
+                    If CompuMaster.Data.Utils.NoDBNull(XmlFile("MD5-Hash"), "") = "" Then XmlFile("MD5-Hash") = MD5FileHash(FullXmlFilePath)
                     XmlFile("IsValidXml") = System.Enum.GetName(GetType(XPathValidation.ValidationResult), XPathValidation.ValidateXml("http://www.bgfdb.de/zefaniaxml/2014/", XsdSchemaFile, FullXmlFilePath))
+                    If ZefaniaData.BibleName.StartsWith("D") Then Exit For
                 End If
                 'Zef1014Deserializer.Main(FullXmlFilePath)
             Next
@@ -86,5 +88,25 @@ Module Module1
             table.Columns.Add(columnName, GetType(String))
         End If
     End Sub
+
+    Public Function MD5FileHash(ByVal sFile As String) As String
+        Dim MD5 As New System.Security.Cryptography.MD5CryptoServiceProvider
+        Dim Hash As Byte()
+        Dim Result As String = ""
+        Dim Tmp As String = ""
+
+        Dim FN As New System.IO.FileStream(sFile, System.IO.FileMode.Open, System.IO.FileAccess.Read, System.IO.FileShare.Read, 8192)
+        MD5.ComputeHash(FN)
+        FN.Close()
+
+        Hash = MD5.Hash
+        For i As Integer = 0 To Hash.Length - 1
+            Tmp = Hex(Hash(i))
+            If Len(Tmp) = 1 Then Tmp = "0" & Tmp
+            Result += Tmp
+        Next
+        Return Result
+    End Function
+
 
 End Module
