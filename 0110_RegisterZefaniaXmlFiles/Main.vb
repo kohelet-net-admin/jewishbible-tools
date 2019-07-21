@@ -27,6 +27,7 @@ Module MainModule
         End Try
         Console.InputEncoding = System.Text.Encoding.UTF8
         Console.OutputEncoding = System.Text.Encoding.UTF8
+        Dim LastFileInProcess As String = Nothing
         Try
             If System.IO.File.Exists(XmlIndexCsvFile) = False Then
                 Console.WriteLine("MISSING XML INDEX FILE: " & New IO.FileInfo(XmlIndexCsvFile).FullName)
@@ -48,6 +49,7 @@ Module MainModule
             'Dim xmlFiles As String() = System.IO.File.ReadAllLines(XmlIndexFile)
             For Each XmlFile As DataRow In xmlFiles.Rows
                 Dim XmlFilePath As String = CType(XmlFile("FilePath"), String)
+                LastFileInProcess = XmlFilePath
                 Dim FullXmlFilePath As String = System.IO.Path.Combine(baseDir, XmlFilePath)
                 If System.IO.File.Exists(FullXmlFilePath) = False Then
                     Dim ForegroundDefaulColor As ConsoleColor = Console.ForegroundColor
@@ -57,7 +59,7 @@ Module MainModule
                     XmlFile("Warnings") = "Missing XML file"
                 Else
                     Console.WriteLine("USING XML FILE: " & XmlFilePath)
-                    Dim ZefaniaData As New ZefaniaXmlBible(FullXmlFilePath, baseDir)
+                    Dim ZefaniaData As New ZefaniaXmlBible(FullXmlFilePath, My.Application.Info.DirectoryPath)
                     XmlFile("ZefaniaXmlSchemaVersion") = ZefaniaData.SchemaName
                     XmlFile("ZefaniaBibleName") = ZefaniaData.BibleName
                     XmlFile("ZefaniaBibleStatus") = ZefaniaData.BibleStatus
@@ -68,6 +70,7 @@ Module MainModule
                     XmlFile("ZefaniaBibleInfoIdentifier") = ZefaniaData.BibleInfoIdentifier
                     If CompuMaster.Data.Utils.NoDBNull(XmlFile("MD5-Hash"), "") = "" Then XmlFile("MD5-Hash") = ZefaniaXmlValidation.MD5FileHash(FullXmlFilePath)
                     XmlFile("IsValidXml") = System.Enum.GetName(GetType(ZefaniaXmlValidation.ValidationResult), ZefaniaXmlValidation.ValidateXml("http://www.bgfdb.de/zefaniaxml/2014/", XsdSchemaFile, FullXmlFilePath))
+                    ExportBibleBookNames(FullXmlFilePath & ".books.csv", ZefaniaData)
                 End If
                 'Zef1014Deserializer.Main(FullXmlFilePath)
             Next
@@ -76,6 +79,7 @@ Module MainModule
         Catch ex As Exception
             Dim ForegroundDefaulColor As ConsoleColor = Console.ForegroundColor
             Console.ForegroundColor = ConsoleColor.Red
+            If LastFileInProcess <> Nothing Then Console.WriteLine("Last file in process: " & LastFileInProcess)
             'Console.WriteLine("Warning {0}", ex.Message)
             Console.WriteLine("Warning {0}", ex.ToString)
             Console.ForegroundColor = ConsoleColor.Black
@@ -88,6 +92,24 @@ Module MainModule
         If table.Columns.Contains(columnName) = False Then
             table.Columns.Add(columnName, GetType(String))
         End If
+    End Sub
+
+    Public Sub ExportBibleBookNames(exportCsvFilePath As String, bible As ZefaniaXmlBible)
+        Dim Result As New DataTable("BibleBooks")
+        Result.Columns.Add("Index", GetType(Integer))
+        Result.Columns.Add("BookNumber", GetType(Integer))
+        Result.Columns.Add("BookName", GetType(String))
+        Result.Columns.Add("BookShortName", GetType(String))
+        For MyCounter As Integer = 0 To bible.Books.Count - 1
+            Dim Row As DataRow = Result.NewRow
+            Row(0) = MyCounter
+            Row(1) = bible.Books(MyCounter).BookNumber
+            Row(2) = bible.Books(MyCounter).BookName
+            Row(3) = bible.Books(MyCounter).BookShortName
+            Result.Rows.Add(Row)
+        Next
+        Result = CompuMaster.Data.DataTables.CreateDataTableClone(Result, "", "BookNumber")
+        CompuMaster.Data.Csv.WriteDataTableToCsvFile(exportCsvFilePath, Result, True, System.Globalization.CultureInfo.InvariantCulture)
     End Sub
 
 End Module
