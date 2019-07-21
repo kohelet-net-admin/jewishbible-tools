@@ -3,7 +3,7 @@ Imports System.Xml
 Imports System.Xml.Schema
 Imports System.Xml.XPath
 
-Class XPathValidation
+Public Class XPathValidation
 
     Public Enum ValidationResult As Byte
         NoWarnings = 0
@@ -11,7 +11,7 @@ Class XPathValidation
         HasErrors = 2
     End Enum
 
-    Shared Function ValidateXml(targetNamespace As String, schemaFile As String, xmlFile As String) As ValidationResult
+    Public Shared Function ValidateXml(targetNamespace As String, schemaFile As String, xmlFile As String) As ValidationResult
         Dim reader As XmlReader = Nothing
         Try
             Dim settings As XmlReaderSettings = New XmlReaderSettings()

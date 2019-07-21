@@ -1,0 +1,590 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+CompuMaster.Data.XlsEpplus
+</name>
+</assembly>
+<members>
+<member name="T:CompuMaster.Data.XlsEpplus">
+ -----------------------------------------------------------------------------
+ <summary>
+     Provides simplified write access to XLS files
+ </summary>
+ <remarks>
+     Please pay attention to following circumstances
+     - Written null values (Nothing in VisualBasic) will be re-read as DBNull.Value
+     - Written zero-DateTime value will be re-read as DBNull.Value
+     - Excel supports DateTime values starting from 01.01.1900, only. Lower date values will throw an exception when assigning.
+     - Excel DateTime values are limited to year, month, day, hour, minute, second. Milliseconds and ticks will be dropped.
+     - Lines with only DBNull.Value or null (Nothing in VisualBasic) will be considered as not-existing if they are the last lines
+ </remarks>
+ <history>
+ 	[adminwezel]	30.05.2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="P:CompuMaster.Data.XlsEpplus.ErrorLevel">
+ -----------------------------------------------------------------------------
+ <summary>
+ Error level 0 doesn't throw exception when writing e.g. invalid date/time values (invalid for excel); Error level 1 throws them
+ </summary>
+ <value></value>
+ <remarks>
+ </remarks>
+ <history>
+ 	[wezel]	31.05.2010	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:CompuMaster.Data.XlsEpplus.WriteDataSetToXlsFile(System.String,System.Data.DataSet)">
+ -----------------------------------------------------------------------------
+ <summary>
+     Create an new excel file with some data
+ </summary>
+ <param name="outputPath">The output file</param>
+ <param name="dataSet">A dataset to write into the workbook</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[adminsupport]	05.07.2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:CompuMaster.Data.XlsEpplus.WriteDataSetToXlsFile(System.String,System.String,System.Data.DataSet)">
+ -----------------------------------------------------------------------------
+ <summary>
+     Load an excel file, put some data into it and save the file again
+ </summary>
+ <param name="inputPath">A file which shall be loaded</param>
+ <param name="outputPath">The output file</param>
+ <param name="dataSet">A dataset to write into the workbook</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[adminsupport]	05.07.2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:CompuMaster.Data.XlsEpplus.WriteDataTableToXlsFile(System.String,System.Data.DataTable)">
+ -----------------------------------------------------------------------------
+ <summary>
+     Create an new excel file with some data
+ </summary>
+ <param name="outputPath">The output file</param>
+ <param name="dataTable">A datatable to write into one of the sheets</param>
+ <remarks>
+ The data will be written to the sheet with the name as the datatable's name
+ </remarks>
+ <history>
+ 	[adminsupport]	05.07.2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:CompuMaster.Data.XlsEpplus.WriteDataTableToXlsFileAndFirstSheet(System.String,System.Data.DataTable)">
+ -----------------------------------------------------------------------------
+ <summary>
+     Create an new excel file with some data
+ </summary>
+ <param name="outputPath">The output file</param>
+ <param name="dataTable">A datatable to write into one of the sheets</param>
+ <remarks>
+ The data will be written to the sheet with the name as the datatable's name
+ </remarks>
+ <history>
+ 	[adminsupport]	05.07.2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:CompuMaster.Data.XlsEpplus.WriteDataTableToXlsFileAndCurrentSheet(System.String,System.Data.DataTable)">
+ -----------------------------------------------------------------------------
+ <summary>
+     Create an new excel file with some data
+ </summary>
+ <param name="outputPath">The output file</param>
+ <param name="dataTable">A datatable to write into one of the sheets</param>
+ <remarks>
+ The data will be written to the sheet with the name as the datatable's name
+ </remarks>
+ <history>
+ 	[adminsupport]	05.07.2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:CompuMaster.Data.XlsEpplus.WriteDataTableToXlsFile(System.String,System.Data.DataTable,System.String)">
+ -----------------------------------------------------------------------------
+ <summary>
+     Create an new excel file with some data
+ </summary>
+ <param name="outputPath">The output file</param>
+ <param name="dataTable">A datatable to write into one of the sheets</param>
+ <param name="sheetName">The name the sheet which shall be updated/added</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[adminsupport]	05.07.2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:CompuMaster.Data.XlsEpplus.WriteDataTableToXlsFile(System.String,System.String,System.Data.DataTable,System.String)">
+ -----------------------------------------------------------------------------
+ <summary>
+     Load an excel file, put some data into it and save the file again
+ </summary>
+ <param name="inputPath">A file which shall be loaded</param>
+ <param name="outputPath">The output file</param>
+ <param name="dataTable">A datatable to write into one of the sheets</param>
+ <param name="sheetName">The name the sheet which shall be updated/added</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[adminsupport]	05.07.2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:CompuMaster.Data.XlsEpplus.WriteDataTableToXlsFile(System.String,System.String,System.Data.DataTable[],System.String[])">
+ -----------------------------------------------------------------------------
+ <summary>
+ Update/create an excel file, put some data into it and save the file again
+ </summary>
+ <param name="inputPath">An optional path to a template</param>
+ <param name="outputPath">The output file</param>
+ <param name="dataTables">Some datatables to write into the workbook</param>
+ <param name="sheetNames">The name the sheets which shall be updated/added in the order as defined by parameter dataTables</param>
+ <remarks>
+ </remarks>
+ <history>
+ 	[adminsupport]	05.07.2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:CompuMaster.Data.XlsEpplus.SaveWorkbook(OfficeOpenXml.ExcelPackage,System.String)">
+ <summary>
+ Save the changed worksheet
+ </summary>
+ <param name="exportWorkbook"></param>
+ <param name="outputPath"></param>
+ <remarks></remarks>
+</member>
+<member name="T:CompuMaster.Data.XlsEpplus.SpecialSheet">
+ <summary>
+ The sheet which is subject of operations
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:CompuMaster.Data.XlsEpplus.OpenAndWriteDataTableToXlsFile(System.String,System.Data.DataTable[],System.String[],CompuMaster.Data.XlsEpplus.SpecialSheet)">
+ <summary>
+ Update/create an excel file, put some data into it and save the file again
+ </summary>
+ <param name="inputPath">An optional path to a template</param>
+ <param name="dataTables">Some datatables to write into the workbook</param>
+ <param name="sheetNames">The name the sheets which shall be updated/added in the order as defined by parameter dataTables</param>
+ <param name="specialSheet">A special sheet</param>
+ <returns>A Workbook object</returns>
+ <remarks></remarks>
+</member>
+<member name="T:CompuMaster.Data.XlsEpplus.FileFormat">
+ <summary>
+ Excel file formats
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:CompuMaster.Data.XlsEpplus.WriteDataTableToXlsStream(System.String,System.IO.Stream,System.Data.DataTable[],System.String[],CompuMaster.Data.XlsEpplus.FileFormat)">
+ <summary>
+ Update/create an excel file, put some data into it and save the file to the output stream
+ </summary>
+ <param name="inputPath">An optional path to a template</param>
+ <param name="outputStream">An opened output stream</param>
+ <param name="dataTables">Some datatables to write into the workbook</param>
+ <param name="sheetNames">The name the sheets which shall be updated/added in the order as defined by parameter dataTables</param>
+ <remarks></remarks>
+</member>
+<member name="M:CompuMaster.Data.XlsEpplus.WriteDataTableToXlsHttpResponse(System.String,System.Data.DataTable[],System.String[],System.Web.HttpContext,CompuMaster.Data.XlsEpplus.FileFormat)">
+ <summary>
+ Directly send the new workbook file to the browser
+ </summary>
+ <param name="inputPath">An optional path to a template</param>
+ <param name="dataTables">Some datatables to write into the workbook</param>
+ <param name="sheetNames">The name the sheets which shall be updated/added in the order as defined by parameter dataTables</param>
+ <param name="httpContext">The current HTTP context</param>
+ <remarks></remarks>
+</member>
+<member name="M:CompuMaster.Data.XlsEpplus.ReadDataSetFromXlsFile(System.String,System.Boolean)">
+ -----------------------------------------------------------------------------
+ <summary>
+     Read all sheets from an excel sheet into a dataset
+ </summary>
+ <param name="inputPath">The filename of the excel document</param>
+ <param name="firstRowContainsColumnNames">Indicate wether the first row contains column names (true) or values (false)</param>
+ <returns>A dataset with one or more, independent tables.</returns>
+ <remarks>
+     The table names are as the sheet names.
+ 
+     Conversion errors will not be ignored!
+     Excel error values
+     #NULL! 1   --> Cell value of type System.Exception with error details
+     #DIV/0! 2  --> Double.NaN
+     #VALUE! 3   --> Cell value of type System.Exception with error details
+     #REF! 4  --> Cell value of type System.Exception with error details
+     #NAME? 5   --> Cell value of type System.Exception with error details
+     #NUM! 6   --> Cell value of type System.Exception with error details
+     #NA 7      --> Cell value of type System.Exception with error details
+     {blank}    --> DBNull
+ </remarks>
+ <history>
+ 	[AdminSupport]	29.09.2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:CompuMaster.Data.XlsEpplus.ReadDataTableFromXlsFile(System.String)">
+ -----------------------------------------------------------------------------
+ <summary>
+     Read the data from an excel sheet into a datatable
+ </summary>
+ <param name="inputPath">The filename of the excel document</param>
+ <returns></returns>
+ <remarks>
+     The first sheet will be used for reading data.
+     Values in first row will be assigned as column names.
+ 
+     Conversion errors will not be ignored!
+     Excel error values
+     #NULL! 1   --> Cell value of type System.Exception with error details
+     #DIV/0! 2  --> Double.NaN
+     #VALUE! 3   --> Cell value of type System.Exception with error details
+     #REF! 4  --> Cell value of type System.Exception with error details
+     #NAME? 5   --> Cell value of type System.Exception with error details
+     #NUM! 6   --> Cell value of type System.Exception with error details
+     #NA 7      --> Cell value of type System.Exception with error details
+     {blank}    --> DBNull
+ </remarks>
+ <history>
+ 	[AdminSupport]	29.09.2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:CompuMaster.Data.XlsEpplus.ReadDataTableFromXlsFile(System.String,System.Boolean)">
+ -----------------------------------------------------------------------------
+ <summary>
+     Read the data from an excel sheet into a datatable
+ </summary>
+ <param name="inputPath">The filename of the excel document</param>
+ <param name="firstRowContainsColumnNames">Indicate wether the first row contains column names (true) or values (false)</param>
+ <returns></returns>
+ <remarks>
+     The first sheet will be used for reading data.
+ 
+     Conversion errors will not be ignored!
+     Excel error values
+     #NULL! 1   --> Cell value of type System.Exception with error details
+     #DIV/0! 2  --> Double.NaN
+     #VALUE! 3   --> Cell value of type System.Exception with error details
+     #REF! 4  --> Cell value of type System.Exception with error details
+     #NAME? 5   --> Cell value of type System.Exception with error details
+     #NUM! 6   --> Cell value of type System.Exception with error details
+     #NA 7      --> Cell value of type System.Exception with error details
+     {blank}    --> DBNull
+ </remarks>
+ <history>
+ 	[AdminSupport]	29.09.2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:CompuMaster.Data.XlsEpplus.ReadDataTableFromXlsFile(System.String,System.Int32,System.Boolean)">
+ -----------------------------------------------------------------------------
+ <summary>
+     Read the data from an excel sheet into a datatable
+ </summary>
+ <param name="inputPath">The filename of the excel document</param>
+ <param name="startReadingAtRowIndex">Sometimes, excel sheets start with an introductional/explaining header instead of just column names, e.g. a table may start at row index 2 (in excel line 3)</param>
+ <param name="firstRowContainsColumnNames">Indicate wether the first row contains column names (true) or values (false)</param>
+ <returns></returns>
+ <remarks>
+     The first sheet will be used for reading data.
+ 
+     Conversion errors will not be ignored!
+     Excel error values
+     #NULL! 1   --> Cell value of type System.Exception with error details
+     #DIV/0! 2  --> Double.NaN
+     #VALUE! 3   --> Cell value of type System.Exception with error details
+     #REF! 4  --> Cell value of type System.Exception with error details
+     #NAME? 5   --> Cell value of type System.Exception with error details
+     #NUM! 6   --> Cell value of type System.Exception with error details
+     #NA 7      --> Cell value of type System.Exception with error details
+     {blank}    --> DBNull
+ </remarks>
+ <history>
+ 	[AdminSupport]	29.09.2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:CompuMaster.Data.XlsEpplus.ReadDataTableFromXlsFile(System.String,System.String)">
+ -----------------------------------------------------------------------------
+ <summary>
+     Read the data from an excel sheet into a datatable
+ </summary>
+ <param name="inputPath">The filename of the excel document</param>
+ <param name="sheetName">The sheet which contains the import data</param>
+ <returns></returns>
+ <remarks>
+     Values in first row will be assigned as column names.
+     Conversion errors will not be ignored!
+     Excel error values
+     #NULL! 1   --> Cell value of type System.Exception with error details
+     #DIV/0! 2  --> Double.NaN
+     #VALUE! 3   --> Cell value of type System.Exception with error details
+     #REF! 4  --> Cell value of type System.Exception with error details
+     #NAME? 5   --> Cell value of type System.Exception with error details
+     #NUM! 6   --> Cell value of type System.Exception with error details
+     #NA 7      --> Cell value of type System.Exception with error details
+     {blank}    --> DBNull
+ </remarks>
+ <history>
+ 	[AdminSupport]	29.09.2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:CompuMaster.Data.XlsEpplus.ReadDataTableFromXlsFile(System.String,System.String,System.Boolean)">
+ -----------------------------------------------------------------------------
+ <summary>
+     Read the data from an excel sheet into a datatable
+ </summary>
+ <param name="inputPath">The filename of the excel document</param>
+ <param name="sheetName">The sheet which contains the import data</param>
+ <param name="firstRowContainsColumnNames">Indicate wether the first row contains column names (true) or values (false)</param>
+ <returns></returns>
+ <remarks>
+     Conversion errors will not be ignored!
+     Excel error values
+     #NULL! 1   --> Cell value of type System.Exception with error details
+     #DIV/0! 2  --> Double.NaN
+     #VALUE! 3   --> Cell value of type System.Exception with error details
+     #REF! 4  --> Cell value of type System.Exception with error details
+     #NAME? 5   --> Cell value of type System.Exception with error details
+     #NUM! 6   --> Cell value of type System.Exception with error details
+     #NA 7      --> Cell value of type System.Exception with error details
+     {blank}    --> DBNull
+ </remarks>
+ <history>
+ 	[AdminSupport]	29.09.2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:CompuMaster.Data.XlsEpplus.ReadDataTableFromXlsFile(System.String,System.String,System.Int32,System.Boolean)">
+ -----------------------------------------------------------------------------
+ <summary>
+     Read the data from an excel sheet into a datatable
+ </summary>
+ <param name="inputPath">The filename of the excel document</param>
+ <param name="sheetName">The sheet which contains the import data</param>
+ <param name="startReadingAtRowIndex">Sometimes, excel sheets start with an introductional/explaining header instead of just column names, e.g. a table may start at row index 2 (in excel line 3)</param>
+ <param name="firstRowContainsColumnNames">Indicate wether the first row contains column names (true) or values (false)</param>
+ <returns></returns>
+ <remarks>
+     Conversion errors will not be ignored!
+     Excel error values
+     #NULL! 1   --> Cell value of type System.Exception with error details
+     #DIV/0! 2  --> Double.NaN
+     #VALUE! 3   --> Cell value of type System.Exception with error details
+     #REF! 4  --> Cell value of type System.Exception with error details
+     #NAME? 5   --> Cell value of type System.Exception with error details
+     #NUM! 6   --> Cell value of type System.Exception with error details
+     #NA 7      --> Cell value of type System.Exception with error details
+     {blank}    --> DBNull
+ </remarks>
+ <history>
+ 	[AdminSupport]	29.09.2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:CompuMaster.Data.XlsEpplus.ReadDataTableFromXlsFile(System.String,System.String,System.Boolean,System.Data.DataTable)">
+ -----------------------------------------------------------------------------
+ <summary>
+     Read the data from an excel sheet into a datatable
+ </summary>
+ <param name="inputPath">The filename of the excel document</param>
+ <param name="sheetName">The sheet which contains the import data</param>
+ <param name="firstRowContainsColumnNames">Indicate wether the first row contains column names (true) or values (false)</param>
+ <param name="data">The datatable which shall be filled; only columns which exist in this target table will be imported</param>
+ <remarks>
+     Conversion errors will not be ignored!
+ 
+     Excel error values
+     #NULL! 1   --> Cell value of type System.Exception with error details
+     #DIV/0! 2  --> Double.NaN
+     #VALUE! 3   --> Cell value of type System.Exception with error details
+     #REF! 4  --> Cell value of type System.Exception with error details
+     #NAME? 5   --> Cell value of type System.Exception with error details
+     #NUM! 6   --> Cell value of type System.Exception with error details
+     #NA 7      --> Cell value of type System.Exception with error details
+     {blank}    --> DBNull
+ 
+     Dependent on the firstRowContainsColumnNames parameter, the datatable parameter must contain a table with column names as they're defined in the first row of the excel sheet or the table's columnn must have the name of the column index in excel ("1", "2", "3", ...)
+ </remarks>
+ <history>
+ 	[AdminSupport]	29.09.2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:CompuMaster.Data.XlsEpplus.ReadDataTableFromXlsFile(System.String,System.String,System.Int32,System.Boolean,System.Data.DataTable)">
+ -----------------------------------------------------------------------------
+ <summary>
+     Read the data from an excel sheet into a datatable
+ </summary>
+ <param name="inputPath">The filename of the excel document</param>
+ <param name="sheetName">The sheet which contains the import data</param>
+ <param name="startReadingAtRowIndex">Sometimes, excel sheets start with an introductional/explaining header instead of just column names, e.g. a table may start at row index 2 (in excel line 3)</param>
+ <param name="firstRowContainsColumnNames">Indicate wether the first row contains column names (true) or values (false)</param>
+ <param name="data">The datatable which shall be filled; only columns which exist in this target table will be imported</param>
+ <remarks>
+     Conversion errors will not be ignored!
+ 
+     Excel error values
+     #NULL! 1   --> Cell value of type System.Exception with error details
+     #DIV/0! 2  --> Double.NaN
+     #VALUE! 3   --> Cell value of type System.Exception with error details
+     #REF! 4  --> Cell value of type System.Exception with error details
+     #NAME? 5   --> Cell value of type System.Exception with error details
+     #NUM! 6   --> Cell value of type System.Exception with error details
+     #NA 7      --> Cell value of type System.Exception with error details
+     {blank}    --> DBNull
+ 
+     Dependent on the firstRowContainsColumnNames parameter, the datatable parameter must contain a table with column names as they're defined in the first row of the excel sheet or the table's columnn must have the name of the column index in excel ("1", "2", "3", ...)
+ </remarks>
+ <history>
+ 	[AdminSupport]	29.09.2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:CompuMaster.Data.XlsEpplus.ReadSheetNamesFromXlsFile(System.String)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Read the available sheet names from an XLS file
+ </summary>
+ <param name="inputPath">The filename of the excel document</param>
+ <returns></returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[wezel]	21.04.2010	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:CompuMaster.Data.XlsEpplus.LookupLastContentColumnIndex(OfficeOpenXml.ExcelWorksheet)">
+ <summary>
+ Lookup the last content column index (zero based index) (the last content cell might differ from Excel's special cell xlLastCell)
+ </summary>
+ <param name="sheet"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:CompuMaster.Data.XlsEpplus.LookupLastContentRowIndex(OfficeOpenXml.ExcelWorksheet)">
+ <summary>
+ Lookup the last content row index (zero based index) (the last content cell might differ from Excel's special cell xlLastCell)
+ </summary>
+ <param name="sheet"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:CompuMaster.Data.XlsEpplus.IsEmptyCell(OfficeOpenXml.ExcelWorksheet,System.Int32,System.Int32)">
+ <summary>
+ Determine if a cell contains empty content
+ </summary>
+ <param name="sheet"></param>
+ <param name="rowIndex">Zero-based index</param>
+ <param name="columnIndex">Zero-based index</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:CompuMaster.Data.XlsEpplus.ReadDataTableFromXlsFile(OfficeOpenXml.ExcelWorksheet,System.Int32,System.Boolean,System.Data.DataTable)">
+ -----------------------------------------------------------------------------
+ <summary>
+     Read the data from an excel sheet into a datatable
+ </summary>
+ <param name="sheet">An excel sheet containing the required data</param>
+ <param name="startReadingAtRowIndex">Sometimes, excel sheets start with an introductional/explaining header instead of just column names, e.g. a table may start at row index 2 (in excel line 3)</param>
+ <param name="firstRowContainsColumnNames">Indicate wether the first row contains column names (true) or values (false)</param>
+ <param name="data">The datatable which shall be filled; only columns which exist in this target table will be imported</param>
+ <remarks>
+     Excel error values
+     #NULL! 1   --> Cell value of type System.Exception with error details
+     #DIV/0! 2  --> Double.NaN
+     #VALUE! 3  --> Cell value of type System.Exception with error details
+     #REF! 4    --> Cell value of type System.Exception with error details
+     #NAME? 5   --> Cell value of type System.Exception with error details
+     #NUM! 6    --> Cell value of type System.Exception with error details
+     #NA 7      --> Cell value of type System.Exception with error details
+     {blank}    --> DBNull
+ 
+     Dependent on the firstRowContainsColumnNames parameter, the datatable parameter must contain a table with column names as they're defined in the first row of the excel sheet or the table's columnn must have the name of the column index in excel ("1", "2", "3", ...)
+ </remarks>
+ <history>
+ 	[AdminSupport]	29.09.2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:CompuMaster.Data.XlsEpplus.ReadDataTableFromXlsFileCreateDataTableSuggestion(OfficeOpenXml.ExcelWorksheet,System.String,System.Int32,System.Boolean)">
+ -----------------------------------------------------------------------------
+ <summary>
+     Analyze the values in the complete sheet for their data type and create a data table with those corresponding column data types to hold all the data of the sheet
+ </summary>
+ <param name="sheet">A sheet</param>
+ <param name="tableName">A table name for the new table</param>
+ <param name="startReadingAtRowIndex">Sometimes, excel sheets start with an introductional/explaining header instead of just column names, e.g. a table may start at row index 2 (in excel line 3)</param>
+ <param name="firstRowContainsColumnNames">Indicate wether the first row contains column names (true) or values (false)</param>
+ <returns>A data table with the suggested structure to be able to hold all the data of the sheet</returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[AdminSupport]	29.09.2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:CompuMaster.Data.XlsEpplus.CellValueAsString(OfficeOpenXml.ExcelRange)">
+ <summary>
+ Try to lookup the cell's value to a string anyhow
+ </summary>
+ <param name="cell"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:CompuMaster.Data.XlsEpplus.ResolveWorksheetIndex(OfficeOpenXml.ExcelPackage,System.String)">
+ -----------------------------------------------------------------------------
+ <summary>
+     Lookup the (zero-based) index number of a work sheet
+ </summary>
+ <param name="workbook">The excel workbook</param>
+ <param name="worksheetName">A work sheet name</param>
+ <returns>-1 if the sheet name doesn't exist, otherwise its index value</returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[AdminSupport]	29.09.2005	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:CompuMaster.Data.XlsEpplus.LookupWorksheet(OfficeOpenXml.ExcelPackage,System.String)">
+ -----------------------------------------------------------------------------
+ <summary>
+     Lookup for a sheet with the specified name
+ </summary>
+ <param name="workbook">The excel workbook</param>
+ <param name="sheetName">A sheet name</param>
+ <returns>An excel sheet</returns>
+ <remarks>
+ </remarks>
+ <history>
+ 	[adminwezel]	02.02.2007	Created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:CompuMaster.Data.XlsEpplus.IsDateTimeInsteadOfNumber(OfficeOpenXml.ExcelRange)">
+ <summary>
+ Lookup if the value is a DateTime value and not a normal number
+ </summary>
+ <param name="cell"></param>
+ <returns>True for DateTime, False for Number(Double)</returns>
+ <remarks></remarks>
+</member>
+</members>
+</doc>

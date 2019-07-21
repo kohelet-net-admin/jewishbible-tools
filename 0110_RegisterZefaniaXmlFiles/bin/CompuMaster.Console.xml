@@ -1,0 +1,349 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+CompuMaster.Console
+</name>
+</assembly>
+<members>
+<member name="T:My.Resources.Resources">
+<summary>
+  Eine stark typisierte Ressourcenklasse zum Suchen von lokalisierten Zeichenfolgen usw.
+</summary>
+</member>
+<member name="P:My.Resources.Resources.ResourceManager">
+<summary>
+  Gibt die zwischengespeicherte ResourceManager-Instanz zurück, die von dieser Klasse verwendet wird.
+</summary>
+</member>
+<member name="P:My.Resources.Resources.Culture">
+<summary>
+  Überschreibt die CurrentUICulture-Eigenschaft des aktuellen Threads für alle
+  Ressourcenzuordnungen, die diese stark typisierte Ressourcenklasse verwenden.
+</summary>
+</member>
+<member name="T:CompuMaster.Console.ControlCKeyPressedException">
+ <summary>
+ An exception that is fired when the user has pressed the key combination Control-C
+ </summary>
+</member>
+<member name="M:CompuMaster.Console.ControlCKeyPressedException.#ctor(CompuMaster.Console.ControlCKeyPressedException)">
+ <summary>
+ Internal workaround to force stack trace to show up with origin line numbers after re-throwing the origin exception
+ </summary>
+ <param name="innerException"></param>
+</member>
+<member name="M:CompuMaster.Console.Write(System.String)">
+ <summary>
+ Write message with current color settings
+ </summary>
+ <param name="text"></param>
+</member>
+<member name="M:CompuMaster.Console._Write(System.String,System.Boolean)">
+ <summary>
+ Write message with current color settings
+ </summary>
+ <param name="text"></param>
+ <param name="showConsoleOutput"></param>
+</member>
+<member name="M:CompuMaster.Console._Write(System.Text.StringBuilder,System.Boolean)">
+ <summary>
+ Write message with current color settings
+ </summary>
+ <param name="text"></param>
+ <param name="showConsoleOutput"></param>
+</member>
+<member name="M:CompuMaster.Console.Write(System.String,System.Object)">
+ <summary>
+ Write message with current color settings
+ </summary>
+ <param name="text"></param>
+ <param name="arg0"></param>
+</member>
+<member name="M:CompuMaster.Console.Write(System.String,System.Object[])">
+ <summary>
+ Write message with current color settings
+ </summary>
+ <param name="text"></param>
+ <param name="args"></param>
+</member>
+<member name="M:CompuMaster.Console.Write(System.String,System.ConsoleColor)">
+ <summary>
+ Write message with current color settings
+ </summary>
+ <param name="text"></param>
+ <param name="colorForeground"></param>
+</member>
+<member name="M:CompuMaster.Console.Write(System.Text.StringBuilder)">
+ <summary>
+ Write message with current color settings
+ </summary>
+ <param name="text"></param>
+</member>
+<member name="M:CompuMaster.Console.Write(System.Text.StringBuilder,System.ConsoleColor)">
+ <summary>
+ Write message with current color settings
+ </summary>
+ <param name="text"></param>
+</member>
+<member name="M:CompuMaster.Console.Write(System.Text.StringBuilder,System.ConsoleColor,System.ConsoleColor)">
+ <summary>
+ Write message with current color settings
+ </summary>
+ <param name="text"></param>
+ <param name="colorForeground"></param>
+ <param name="colorBackground"></param>
+</member>
+<member name="M:CompuMaster.Console.Write(System.String,System.ConsoleColor,System.ConsoleColor)">
+ <summary>
+ Write message with current color settings
+ </summary>
+ <param name="text"></param>
+ <param name="colorForeground"></param>
+ <param name="colorBackground"></param>
+</member>
+<member name="M:CompuMaster.Console.WriteLine">
+ <summary>
+ Write message with current color settings
+ </summary>
+</member>
+<member name="M:CompuMaster.Console.WriteLine(System.String)">
+ <summary>
+ Write message with current color settings
+ </summary>
+ <param name="text"></param>
+</member>
+<member name="M:CompuMaster.Console.WriteLine(System.Text.StringBuilder)">
+ <summary>
+ Write message with current color settings
+ </summary>
+ <param name="text"></param>
+</member>
+<member name="M:CompuMaster.Console.WriteLine(System.Text.StringBuilder,System.ConsoleColor)">
+ <summary>
+ Write message with current color settings
+ </summary>
+ <param name="text"></param>
+</member>
+<member name="M:CompuMaster.Console.WriteLine(System.Text.StringBuilder,System.ConsoleColor,System.ConsoleColor)">
+ <summary>
+ Write message with current color settings
+ </summary>
+ <param name="text"></param>
+</member>
+<member name="M:CompuMaster.Console.WriteLine(System.String,System.Object)">
+ <summary>
+ Write message with current color settings
+ </summary>
+ <param name="text"></param>
+ <param name="arg0"></param>
+</member>
+<member name="M:CompuMaster.Console.WriteLine(System.String,System.Object[])">
+ <summary>
+ Write message with current color settings
+ </summary>
+ <param name="text"></param>
+ <param name="args"></param>
+</member>
+<member name="M:CompuMaster.Console.WriteLine(System.String,System.ConsoleColor)">
+ <summary>
+ Write message with current color settings
+ </summary>
+ <param name="text"></param>
+ <param name="colorForeground"></param>
+</member>
+<member name="M:CompuMaster.Console.WriteLine(System.String,System.ConsoleColor,System.ConsoleColor)">
+ <summary>
+ Write message with specified color settings
+ </summary>
+ <param name="text"></param>
+ <param name="colorForeground"></param>
+ <param name="colorBackground"></param>
+</member>
+<member name="M:CompuMaster.Console.Warn(System.String)">
+ <summary>
+ Write with color setting for status warning messages
+ </summary>
+ <param name="text"></param>
+</member>
+<member name="M:CompuMaster.Console.Warn(System.Text.StringBuilder)">
+ <summary>
+ Write with color setting for status warning messages
+ </summary>
+ <param name="text"></param>
+</member>
+<member name="M:CompuMaster.Console.WarnLine">
+ <summary>
+ Write with color setting for status warning messages
+ </summary>
+</member>
+<member name="M:CompuMaster.Console.WarnLine(System.String)">
+ <summary>
+ Write with color setting for status warning messages
+ </summary>
+ <param name="text"></param>
+</member>
+<member name="M:CompuMaster.Console.WarnLine(System.Text.StringBuilder)">
+ <summary>
+ Write with color setting for status warning messages
+ </summary>
+ <param name="text"></param>
+</member>
+<member name="M:CompuMaster.Console.Okay(System.String)">
+ <summary>
+ Write with color setting for status okay messages
+ </summary>
+ <param name="text"></param>
+</member>
+<member name="M:CompuMaster.Console.Okay(System.Text.StringBuilder)">
+ <summary>
+ Write with color setting for status okay messages
+ </summary>
+ <param name="text"></param>
+</member>
+<member name="M:CompuMaster.Console.OkayLine">
+ <summary>
+ Write with color setting for status okay messages
+ </summary>
+</member>
+<member name="M:CompuMaster.Console.OkayLine(System.String)">
+ <summary>
+ Write with color setting for status okay messages
+ </summary>
+ <param name="text"></param>
+</member>
+<member name="M:CompuMaster.Console.OkayLine(System.Text.StringBuilder)">
+ <summary>
+ Write with color setting for status okay messages
+ </summary>
+ <param name="text"></param>
+</member>
+<member name="M:CompuMaster.Console.PlainTextLog">
+ <summary>
+ The log data as raw text content 
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:CompuMaster.Console.RawPlainTextLog">
+ <summary>
+ The log data as raw text content incl. some tags for style of output
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:CompuMaster.Console.HtmlLog">
+ <summary>
+ The log data as HTML content
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:CompuMaster.Console.HtmlLog(System.Boolean)">
+ <summary>
+ Add tags HTML + BODY around the log data
+ </summary>
+ <param name="wrapAroundHtmlAndBodyTags"></param>
+ <returns></returns>
+</member>
+<member name="M:CompuMaster.Console.HtmlLog(System.String)">
+ <summary>
+ Add tags HTML + HEAD incl. TITLE + BODY around the log data
+ </summary>
+ <param name="pageTitle">A page title (will be HTML encoded)</param>
+ <returns></returns>
+</member>
+<member name="M:CompuMaster.Console.HtmlLog(System.String,System.String,System.String)">
+ <summary>
+ Add tags HTML + HEAD incl. TITLE + BODY around the log data
+ </summary>
+ <param name="headContent"></param>
+ <param name="bodyPreContent"></param>
+ <param name="bodyPostContent"></param>
+ <returns></returns>
+</member>
+<member name="M:CompuMaster.Console.HtmlLog(System.Boolean,System.String,System.String,System.String)">
+ <summary>
+ Add tags HTML + HEAD incl. TITLE + BODY around the log data
+ </summary>
+ <param name="wrapAroundHtmlAndBodyTags"></param>
+ <param name="headContent"></param>
+ <param name="bodyPreContent"></param>
+ <param name="bodyPostContent"></param>
+ <returns></returns>
+</member>
+<member name="M:CompuMaster.Console.SavePlainTextLog(System.String)">
+ <summary>
+ Save the log data as plain text to a file
+ </summary>
+ <param name="path"></param>
+</member>
+<member name="M:CompuMaster.Console.SaveRawPlainTextLog(System.String)">
+ <summary>
+ Save the log data as raw text (contains internal tags for e.g. color output) to a file
+ </summary>
+ <param name="path"></param>
+</member>
+<member name="M:CompuMaster.Console.SaveHtmlLog(System.String)">
+ <summary>
+ Save the log data as HTML text to a file
+ </summary>
+ <param name="path"></param>
+</member>
+<member name="M:CompuMaster.Console.SaveHtmlLog(System.String,System.String)">
+ <summary>
+ Save the log data as HTML text to a file
+ </summary>
+ <param name="path"></param>
+ <param name="pageTitle"></param>
+</member>
+<member name="M:CompuMaster.Console.SaveHtmlLog(System.String,System.String,System.String,System.String)">
+ <summary>
+ Save the log data as HTML text to a file
+ </summary>
+ <param name="path"></param>
+ <param name="headContent">Content for the head area</param>
+ <param name="bodyPreContent">Content for the body area before the log data</param>
+ <param name="bodyPostContent">Content for the body area after the log data</param>
+</member>
+<member name="M:CompuMaster.Console.ResetColor">
+ <summary>
+ Reset the foreground and background color to the system defaults
+ </summary>
+</member>
+<member name="M:CompuMaster.Console.RaiseControlCKeyPressedException">
+ <summary>
+ Raise the exception for ControlC KeyPressed 
+ </summary>
+</member>
+<member name="M:CompuMaster.Console.ReadLine">
+ <summary>
+ Ask for user input confirmed with a Enter key
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:CompuMaster.Console.ReadLine(System.Boolean)">
+ <summary>
+ Ask for user input confirmed with a Enter key
+ </summary>
+ <param name="showInputInLogs">For sensitive data, you might want to hide input text in logs</param>
+ <returns></returns>
+</member>
+<member name="M:CompuMaster.Console.Clear">
+ <summary>
+ Clear the content of console window (logs will append 3 line breaks)
+ </summary>
+</member>
+<member name="M:CompuMaster.Console.Clear(System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+ <summary>
+ Clear the content of console window and/or logs
+ </summary>
+ <param name="consoleWindow"></param>
+ <param name="plainTextLog"></param>
+ <param name="htmlLog"></param>
+</member>
+<member name="P:CompuMaster.Console.HasWarnings">
+ <summary>
+ Indicate if at least 1 warning has been written
+ </summary>
+ <returns></returns>
+</member>
+</members>
+</doc>

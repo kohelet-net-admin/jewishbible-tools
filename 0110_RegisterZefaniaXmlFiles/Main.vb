@@ -1,7 +1,7 @@
 ﻿Option Explicit On
 'Option Strict On
 
-Module Module1
+Module MainModule
 
     Sub Main()
         'Zef1014Deserializer.MainZefaniaXmlTest()
@@ -17,6 +17,7 @@ Module Module1
         Dim XmlIndexCsvFile As String = System.IO.Path.Combine(baseDir, "downloads.csv")
         Dim XsdSchemaFile As String = System.IO.Path.Combine(baseDir, "..\Schema\zef2014.xsd")
         Dim XmlIndexDetailsCsvFile As String = System.IO.Path.Combine(baseDir, "index.csv")
+        Dim XmlIndexDetailsXlsxFile As String = System.IO.Path.Combine(baseDir, "index.xlsx")
         Try
             Console.SetWindowSize(Console.WindowWidth * 2.5, Console.WindowHeight * 2.5)
         Catch ex As Exception
@@ -52,11 +53,11 @@ Module Module1
                     Dim ForegroundDefaulColor As ConsoleColor = Console.ForegroundColor
                     Console.ForegroundColor = ConsoleColor.Red
                     Console.WriteLine("MISSING XML FILE: " & FullXmlFilePath)
-                    Console.ForegroundColor = ConsoleColor.Black
+                    Console.ForegroundColor = ForegroundDefaulColor
                     XmlFile("Warnings") = "Missing XML file"
                 Else
                     Console.WriteLine("USING XML FILE: " & XmlFilePath)
-                    Dim ZefaniaData As New ZefaniaXmlBible(FullXmlFilePath)
+                    Dim ZefaniaData As New ZefaniaXmlBible(FullXmlFilePath, baseDir)
                     XmlFile("ZefaniaXmlSchemaVersion") = ZefaniaData.SchemaName
                     XmlFile("ZefaniaBibleName") = ZefaniaData.BibleName
                     XmlFile("ZefaniaBibleStatus") = ZefaniaData.BibleStatus
@@ -71,6 +72,7 @@ Module Module1
                 'Zef1014Deserializer.Main(FullXmlFilePath)
             Next
             CompuMaster.Data.Csv.WriteDataTableToCsvFile(XmlIndexDetailsCsvFile, xmlFiles, True, System.Globalization.CultureInfo.InvariantCulture, "UTF-8", ",", """"c)
+            CompuMaster.Data.XlsEpplus.WriteDataTableToXlsFileAndFirstSheet(XmlIndexDetailsXlsxFile, xmlFiles)
         Catch ex As Exception
             Dim ForegroundDefaulColor As ConsoleColor = Console.ForegroundColor
             Console.ForegroundColor = ConsoleColor.Red

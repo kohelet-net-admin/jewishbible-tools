@@ -47,12 +47,19 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CompuMaster.Console, Version=2017.10.11.107, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\CompuMaster.Console.2017.10.11.107\lib\net45\CompuMaster.Console.dll</HintPath>
+    </Reference>
     <Reference Include="CompuMaster.Data, Version=2.8.2019.514, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\CompuMaster.Data.2.8.2019.514\lib\net20\CompuMaster.Data.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -73,7 +80,7 @@
   <ItemGroup>
     <Compile Include="XPathValidation.vb" />
     <Compile Include="Main.vb" />
-    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
@@ -92,6 +99,7 @@
     <Compile Include="XsdClasses\zef2014.vb" />
     <Compile Include="Zef1014Deserializer.vb" />
     <Compile Include="ZefaniaXmlBible.vb" />
+    <Compile Include="ZefaniaXmlBook.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -121,6 +129,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\CompuMaster.Data.XlsEpplus\XlsEpplus\XlsEpplus.vbproj">
+      <Project>{14da1292-0d02-452e-9518-18496ab59231}</Project>
+      <Name>XlsEpplus</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
