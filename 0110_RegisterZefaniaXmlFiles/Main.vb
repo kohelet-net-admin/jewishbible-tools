@@ -1,5 +1,7 @@
 ﻿Option Explicit On
-'Option Strict On
+Option Strict On
+
+Imports CompuMaster
 
 Module MainModule
 
@@ -18,15 +20,15 @@ Module MainModule
         Dim XsdSchemaFile As String = System.IO.Path.Combine(baseDir, "..\Schema\zef2014.xsd")
         Dim XmlIndexDetailsCsvFile As String = System.IO.Path.Combine(baseDir, "index.csv")
         Dim XmlIndexDetailsXlsxFile As String = System.IO.Path.Combine(baseDir, "index.xlsx")
-        Try
-            Console.SetWindowSize(Console.WindowWidth * 2.5, Console.WindowHeight * 2.5)
-        Catch ex As Exception
-            Console.ForegroundColor = ConsoleColor.Red
-            Console.WriteLine(ex.Message)
-            Console.ResetColor()
-        End Try
-        Console.InputEncoding = System.Text.Encoding.UTF8
-        Console.OutputEncoding = System.Text.Encoding.UTF8
+        'Try
+        '    Console.SetWindowSize(Console.WindowWidth * 2.5, Console.WindowHeight * 2.5)
+        'Catch ex As Exception
+        '    Console.ForegroundColor = ConsoleColor.Red
+        '    Console.WriteLine(ex.Message)
+        '    Console.ResetColor()
+        'End Try
+        'Console.InputEncoding = System.Text.Encoding.UTF8
+        'Console.OutputEncoding = System.Text.Encoding.UTF8
         Dim LastFileInProcess As String = Nothing
         Try
             If System.IO.File.Exists(XmlIndexCsvFile) = False Then
@@ -70,7 +72,12 @@ Module MainModule
                     XmlFile("ZefaniaBibleInfoIdentifier") = ZefaniaData.BibleInfoIdentifier
                     If CompuMaster.Data.Utils.NoDBNull(XmlFile("MD5-Hash"), "") = "" Then XmlFile("MD5-Hash") = ZefaniaXmlValidation.MD5FileHash(FullXmlFilePath)
                     XmlFile("IsValidXml") = System.Enum.GetName(GetType(ZefaniaXmlValidation.ValidationResult), ZefaniaXmlValidation.ValidateXml("http://www.bgfdb.de/zefaniaxml/2014/", XsdSchemaFile, FullXmlFilePath))
-                    ExportBibleBookNames(FullXmlFilePath & ".books.csv", ZefaniaData)
+                    Try
+                        ExportBibleBookNames(FullXmlFilePath & ".books.csv", ZefaniaData)
+                    Catch ex As Exception
+                        'Console.WarnLine("WARNING: " & ex.Message)
+                        Console.WarnLine("WARNING: " & ex.ToString)
+                    End Try
                 End If
                 'Zef1014Deserializer.Main(FullXmlFilePath)
             Next
@@ -78,11 +85,9 @@ Module MainModule
             CompuMaster.Data.XlsEpplus.WriteDataTableToXlsFileAndFirstSheet(XmlIndexDetailsXlsxFile, xmlFiles)
         Catch ex As Exception
             Dim ForegroundDefaulColor As ConsoleColor = Console.ForegroundColor
-            Console.ForegroundColor = ConsoleColor.Red
             If LastFileInProcess <> Nothing Then Console.WriteLine("Last file in process: " & LastFileInProcess)
-            'Console.WriteLine("Warning {0}", ex.Message)
-            Console.WriteLine("Warning {0}", ex.ToString)
-            Console.ForegroundColor = ConsoleColor.Black
+            'Console.WarnLine("CRITICAL ERROR: " & ex.Message)
+            Console.WarnLine("CRITICAL ERROR: " & ex.ToString)
             If System.Environment.GetCommandLineArgs(0).Contains(".vshost") Then Console.ReadLine()
             System.Environment.Exit(3)
         End Try

@@ -28,5 +28,23 @@ ZefaniaXml.Data
  </summary>
  <returns></returns>
 </member>
+<member name="P:KoheletNetwork.ZefaniaXmlBook.BookName">
+ <summary>
+ This attribut should hold the book name in long form e.x. "Genesis"
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXmlBook.BookShortName">
+ <summary>
+ This attribute holds the book book name in short form e.x. "Gen"
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXmlBook.BookNumber">
+ <summary>
+ A number which is unambiguous for a certain bible book
+ </summary>
+ <returns></returns>
+</member>
 </members>
 </doc>
