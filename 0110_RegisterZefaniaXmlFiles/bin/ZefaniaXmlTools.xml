@@ -1126,11 +1126,5 @@ ZefaniaXmlTools
 <member name="F:KoheletNetwork.ZefaniaXml2014.ItemsChoiceType1.verse">
 <remarks/>
 </member>
-<member name="P:KoheletNetwork.ZefaniaXmlBible.XsdDirectory">
- <summary>
- The directory path where the XSD schema files for ZefaniaXml are stored
- </summary>
- <returns></returns>
-</member>
 </members>
 </doc>

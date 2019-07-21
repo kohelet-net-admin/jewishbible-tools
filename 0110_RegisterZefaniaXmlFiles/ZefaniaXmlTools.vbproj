@@ -11,8 +11,9 @@
     <AssemblyName>ZefaniaXmlTools</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>Console</MyType>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -78,7 +79,6 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="XPathValidation.vb" />
     <Compile Include="Main.vb" />
     <Compile Include="AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -97,9 +97,7 @@
     </Compile>
     <Compile Include="XsdClasses\zef2005.vb" />
     <Compile Include="XsdClasses\zef2014.vb" />
-    <Compile Include="Zef1014Deserializer.vb" />
-    <Compile Include="ZefaniaXmlBible.vb" />
-    <Compile Include="ZefaniaXmlBook.vb" />
+    <None Include="Zef1014Deserializer.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -120,20 +118,16 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
-    <Content Include="zef2014.xsd">
-      <SubType>Designer</SubType>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="zef2005.xsd">
-      <SubType>Designer</SubType>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\CompuMaster.Data.XlsEpplus\XlsEpplus\XlsEpplus.vbproj">
       <Project>{14da1292-0d02-452e-9518-18496ab59231}</Project>
       <Name>XlsEpplus</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\zefania-xml-data\ZefaniaXmlData.vbproj">
+      <Project>{c4adc7ca-c266-47a3-b38f-35a77818e146}</Project>
+      <Name>ZefaniaXmlData</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
