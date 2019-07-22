@@ -28,6 +28,18 @@ ZefaniaXml.Data
  </summary>
  <returns></returns>
 </member>
+<member name="P:KoheletNetwork.ZefaniaXmlBible.BibleInfoTitle">
+ <summary>
+ Full bible name
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXmlBible.BibleInfoIdentifier">
+ <summary>
+ Unique identifier for bible name
+ </summary>
+ <returns></returns>
+</member>
 <member name="M:KoheletNetwork.ZefaniaXmlBible.ValidateXmlData">
  <summary>
  Check for the XML schema name and validate accordingly

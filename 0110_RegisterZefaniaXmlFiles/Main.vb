@@ -43,12 +43,25 @@ Module MainModule
             EnsureAvailableStringColumn(xmlFiles, "IsValidXml")
             EnsureAvailableStringColumn(xmlFiles, "ZefaniaXmlSchemaVersion")
             EnsureAvailableStringColumn(xmlFiles, "ZefaniaBibleName")
+            EnsureAvailableStringColumn(xmlFiles, "ZefaniaBibleWithoutCopyright")
             EnsureAvailableStringColumn(xmlFiles, "ZefaniaBibleStatus")
             EnsureAvailableStringColumn(xmlFiles, "ZefaniaBibleVersion")
             EnsureAvailableStringColumn(xmlFiles, "ZefaniaBibleRevision")
             EnsureAvailableStringColumn(xmlFiles, "ZefaniaBibleType")
             EnsureAvailableStringColumn(xmlFiles, "ZefaniaBibleInfoTitle")
             EnsureAvailableStringColumn(xmlFiles, "ZefaniaBibleInfoIdentifier")
+            EnsureAvailableStringColumn(xmlFiles, "ZefaniaBibleInfoIdentifier")
+            EnsureAvailableStringColumn(xmlFiles, "ZefaniaBibleInfoCoverage")
+            EnsureAvailableStringColumn(xmlFiles, "ZefaniaBibleInfoCreator")
+            EnsureAvailableStringColumn(xmlFiles, "ZefaniaBibleInfoDate")
+            EnsureAvailableStringColumn(xmlFiles, "ZefaniaBibleInfoDescription")
+            EnsureAvailableStringColumn(xmlFiles, "ZefaniaBibleInfoFormat")
+            EnsureAvailableStringColumn(xmlFiles, "ZefaniaBibleInfoLanguage")
+            EnsureAvailableStringColumn(xmlFiles, "ZefaniaBibleInfoPublisher")
+            EnsureAvailableStringColumn(xmlFiles, "ZefaniaBibleInfoRights")
+            EnsureAvailableStringColumn(xmlFiles, "ZefaniaBibleInfoSources")
+            EnsureAvailableStringColumn(xmlFiles, "ZefaniaBibleInfoSubject")
+            EnsureAvailableStringColumn(xmlFiles, "ZefaniaBibleInfoType")
             EnsureAvailableStringColumn(xmlFiles, "MD5-Hash")
             EnsureAvailableStringColumn(xmlFiles, "Warnings")
             'Dim xmlFiles As String() = System.IO.File.ReadAllLines(XmlIndexFile)
@@ -69,12 +82,24 @@ Module MainModule
                     Dim ZefaniaData As New ZefaniaXmlBible(FullXmlFilePath, XsdDirectory)
                     XmlFile("ZefaniaXmlSchemaVersion") = ZefaniaData.SchemaName
                     XmlFile("ZefaniaBibleName") = ZefaniaData.BibleName
+                    XmlFile("ZefaniaBibleWithoutCopyright") = ZefaniaData.BibleWithoutCopyright
                     XmlFile("ZefaniaBibleStatus") = ZefaniaData.BibleStatus
                     XmlFile("ZefaniaBibleVersion") = ZefaniaData.BibleVersion
                     XmlFile("ZefaniaBibleRevision") = ZefaniaData.BibleRevision
                     XmlFile("ZefaniaBibleType") = ZefaniaData.BibleType
                     XmlFile("ZefaniaBibleInfoTitle") = ZefaniaData.BibleInfoTitle
                     XmlFile("ZefaniaBibleInfoIdentifier") = ZefaniaData.BibleInfoIdentifier
+                    XmlFile("ZefaniaBibleInfoCoverage") = ZefaniaData.BibleInfoCoverage
+                    XmlFile("ZefaniaBibleInfoCreator") = ZefaniaData.BibleInfoCreator
+                    XmlFile("ZefaniaBibleInfoDate") = ZefaniaData.BibleInfoDate
+                    XmlFile("ZefaniaBibleInfoDescription") = ZefaniaData.BibleInfoDescription
+                    XmlFile("ZefaniaBibleInfoFormat") = ZefaniaData.BibleInfoFormat
+                    XmlFile("ZefaniaBibleInfoLanguage") = ZefaniaData.BibleInfoLanguage
+                    XmlFile("ZefaniaBibleInfoPublisher") = ZefaniaData.BibleInfoPublisher
+                    XmlFile("ZefaniaBibleInfoRights") = ZefaniaData.BibleInfoRights
+                    XmlFile("ZefaniaBibleInfoSources") = ZefaniaData.BibleInfoSources
+                    XmlFile("ZefaniaBibleInfoSubject") = ZefaniaData.BibleInfoSubject
+                    XmlFile("ZefaniaBibleInfoType") = ZefaniaData.BibleInfoType
                     If CompuMaster.Data.Utils.NoDBNull(XmlFile("MD5-Hash"), "") = "" Then XmlFile("MD5-Hash") = ZefaniaXmlValidation.MD5FileHash(FullXmlFilePath)
                     'XmlFile("IsValidXml") = System.Enum.GetName(GetType(ZefaniaXmlValidation.ValidationResult), ZefaniaXmlValidation.ValidateXml("http://www.bgfdb.de/zefaniaxml/2014/", XsdSchemaFile, FullXmlFilePath))
                     XmlFile("IsValidXml") = System.Enum.GetName(GetType(ZefaniaXmlBible.ValidationResult), ZefaniaData.IsValidXml)
