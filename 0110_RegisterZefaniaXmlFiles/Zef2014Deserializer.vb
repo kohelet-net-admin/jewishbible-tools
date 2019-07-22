@@ -1,15 +1,15 @@
 ﻿Imports System.IO
 Imports System.Xml.Serialization
 
-Public Class Zef1014Deserializer
+Public Class Zef2014Deserializer
 
     Public Shared Sub MainZefaniaXmlTest()
-        Dim t As New Zef1014Deserializer()
+        Dim t As New Zef2014Deserializer()
         t.ReadPO("elb1905.xml")
     End Sub 'Main
 
     Public Shared Sub Main(file As String)
-        Dim t As New Zef1014Deserializer()
+        Dim t As New Zef2014Deserializer()
         t.ReadPO(file)
     End Sub 'Main
 

@@ -54,6 +54,12 @@
     <Reference Include="CompuMaster.Data, Version=2.8.2019.514, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\CompuMaster.Data.2.8.2019.514\lib\net20\CompuMaster.Data.dll</HintPath>
     </Reference>
+    <Reference Include="CompuMaster.Data.XlsEpplus, Version=2.2.2019.721, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\CompuMaster.Data.XlsEpplus.2.2.2019.721-beta\lib\net40\CompuMaster.Data.XlsEpplus.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus, Version=4.5.3.2, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>packages\EPPlus.4.5.3.2\lib\net40\EPPlus.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.configuration" />
@@ -97,7 +103,7 @@
     </Compile>
     <Compile Include="XsdClasses\zef2005.vb" />
     <Compile Include="XsdClasses\zef2014.vb" />
-    <None Include="Zef1014Deserializer.vb" />
+    <None Include="Zef2014Deserializer.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -121,10 +127,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\CompuMaster.Data.XlsEpplus\XlsEpplus\XlsEpplus.vbproj">
-      <Project>{14da1292-0d02-452e-9518-18496ab59231}</Project>
-      <Name>XlsEpplus</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\zefania-xml-data\ZefaniaXmlData.vbproj">
       <Project>{c4adc7ca-c266-47a3-b38f-35a77818e146}</Project>
       <Name>ZefaniaXmlData</Name>

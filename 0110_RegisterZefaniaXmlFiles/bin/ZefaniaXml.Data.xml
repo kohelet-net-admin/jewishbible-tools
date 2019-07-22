@@ -28,6 +28,71 @@ ZefaniaXml.Data
  </summary>
  <returns></returns>
 </member>
+<member name="M:KoheletNetwork.ZefaniaXmlBible.ValidateXmlData">
+ <summary>
+ Check for the XML schema name and validate accordingly
+ </summary>
+</member>
+<member name="M:KoheletNetwork.ZefaniaXmlBible.ValidateXmlDataWithSchema(System.String,System.String)">
+ <summary>
+ Check the XmlDocument based on its named schema
+ </summary>
+</member>
+<member name="M:KoheletNetwork.ZefaniaXmlBible.IsValidXml">
+ <summary>
+ Is the XmlDocument successfully validated against the XmlSchema
+ </summary>
+ <remarks>, Success on warnings or without any</remarks>
+ <returns>False on exceptions or validation errors, True on warnings, True without any errors or warnings </returns>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXmlBible.Books">
+ <summary>
+ List of all available books
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:KoheletNetwork.ZefaniaXmlBible.ValidateDeeply">
+ <summary>
+ Validate the XmlDocument as well as internal data structure inclusive all child objects
+ </summary>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXmlBible.ValidationErrors">
+ <summary>
+ Validation errors (not warnings) detected by method ValidateDeeply()
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXmlBible.ValidationXmlWarnings">
+ <summary>
+ Validation warnings detected by method IsValidXml (only XmlDocument schema validation)
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXmlBible.ValidationXmlErrors">
+ <summary>
+ Validation errors detected by method IsValidXml (only XmlDocument schema validation)
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:KoheletNetwork.ZefaniaXmlBible.ValidationEventHandler(System.Object,System.Xml.Schema.ValidationEventArgs)">
+ <summary>
+ Catch validation events for warnings or errors
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:KoheletNetwork.ZefaniaXmlBible.ValidationEventHandlerExceptionToString">
+ <summary>
+ Convert an exception into a string
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:KoheletNetwork.ZefaniaXmlBook.MoveBookPositionInBible(KoheletNetwork.ZefaniaXmlBook)">
+ <summary>
+ Move this book to a new position in the bible collection
+ </summary>
+ <param name="insertBefore"></param>
+</member>
 <member name="P:KoheletNetwork.ZefaniaXmlBook.BookName">
  <summary>
  This attribut should hold the book name in long form e.x. "Genesis"
