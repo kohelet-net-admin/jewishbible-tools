@@ -108,7 +108,7 @@ Module MainModule
                     If ZefaniaData.ValidationErrors.Count > 0 Then
                         Dim sb As New System.Text.StringBuilder
                         For MyCounter As Integer = 0 To ZefaniaData.ValidationErrors.Count - 1
-                            sb.AppendLine(ZefaniaData.ValidationErrors(MyCounter).ToString)
+                            sb.AppendLine(ZefaniaData.ValidationErrors(MyCounter).Message)
                         Next
                         System.IO.File.WriteAllText(FullXmlErrorLogPath, sb.ToString, System.Text.Encoding.UTF8)
                         If sb.Length > 254 Then
