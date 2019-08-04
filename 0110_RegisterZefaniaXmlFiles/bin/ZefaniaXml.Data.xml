@@ -107,19 +107,91 @@ ZefaniaXml.Data
 </member>
 <member name="P:KoheletNetwork.ZefaniaXmlBook.BookName">
  <summary>
- This attribut should hold the book name in long form e.x. "Genesis"
+ This attribut should hold the book name in long form, e.g. "Genesis"
  </summary>
  <returns></returns>
 </member>
 <member name="P:KoheletNetwork.ZefaniaXmlBook.BookShortName">
  <summary>
- This attribute holds the book book name in short form e.x. "Gen"
+ This attribute holds the book book name in short form, e.g. "Gen"
  </summary>
  <returns></returns>
 </member>
 <member name="P:KoheletNetwork.ZefaniaXmlBook.BookNumber">
  <summary>
  A number which is unambiguous for a certain bible book
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXmlBook.Chapters">
+ <summary>
+ List of all available chapters
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXmlChapter.ChapterNumber">
+ <summary>
+ This attribut should hold the chapter number, e.g. "1"
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXmlChapter.Captions">
+ <summary>
+ List of all available captions
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXmlChapter.Verses">
+ <summary>
+ List of all available verses
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXmlVerse.ContentText">
+ <summary>
+ This verse content as plain text
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXmlVerse.ContentXml">
+ <summary>
+ This verse content with Zefania XML markup
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXmlVerse.VerseNumber">
+ <summary>
+ This attribut holds the referenced verse number, e.g. "1"
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXmlCaption.CaptionTitle">
+ <summary>
+ This attribut holds the caption title in long form, e.g. "Bereschit בראשית (Gen 1,1-6,8)"
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXmlCaption.CaptionType">
+ <summary>
+ This attribut holds the caption type, e.g. "x-h2"
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXmlCaption.VerseNumberReference">
+ <summary>
+ This attribut holds the referenced verse number, e.g. "1"
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXmlCaption.VerseReference">
+ <summary>
+ The referenced verse
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXmlCaption.Count">
+ <summary>
+ This attribut holds the count information, e.g. "146"
  </summary>
  <returns></returns>
 </member>
