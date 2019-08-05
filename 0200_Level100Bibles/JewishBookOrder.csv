@@ -1,77 +1,77 @@
-﻿BookNumber,BookName,BookShortName
-1,1 Mose,1Mo
-2,2 Mose,2Mo
-3,3 Mose,3Mo
-4,4 Mose,4Mo
-5,5 Mose,5Mo
-6,Josua,Jos
-7,Richter,Ri
-8,Rut,Rt
-9,1 Samuel,1Sam
-10,2 Samuel,2Sam
-11,1 Könige,1Kö
-12,2 Könige,2Kö
-13,1 Chronik,1Chr
-14,2 Chronik,2Chr
-15,Esra,Esr
-16,Nehemia,Neh
-17,Ester,Est
-18,Hiob,Hi
-19,Psalm,Ps
-20,Sprüche,Spr
-21,Prediger,Pred
-22,Hohelied,Hl
-23,Jesaja,Jes
-24,Jeremia,Jer
-25,Klagelieder,Kla
-26,Hesekiel,Hes
-27,Daniel,Dan
-28,Hosea,Hos
-29,Joel,Joe
-30,Amos,Am
-31,Obadja,Ob
-32,Jona,Jon
-33,Micha,Mi
-34,Nahum,Nah
-35,Habakuk,Hab
-36,Zephanja,Zeph
-37,Haggai,Haggai
-38,Sacharja,Sach
-39,Maleachi,Mal
-40,Matthäus,Mt
-41,Markus,Mk
-42,Lukas,Lk
-43,Johannes,Joh
-44,Apostelgeschichte,Apg
-45,Römer,Röm
-46,1 Korinther,1Kor
-47,2 Korinther,2Kor
-48,Galater,Gal
-49,Epheser,Eph
-50,Philipper,Phil
-51,Kolosser,Kol
-52,1 Thessalonicher,1Thes
-53,2 Thessalonicher,2Thes
-54,1 Timotheus,1Tim
-55,2 Timotheus,2Tim
-56,Titus,Tit
-57,Philemon,Phim
-58,Hebräer,Hebr
-59,Jakobus,Jak
-60,1 Petrus,1Petr
-61,2 Petrus,2Petr
-62,1 Johannes,1Jo
-63,2 Johannes,2Jo
-64,3 Johannes,3Jo
-65,Judas,Jud
-66,Offenbarung,Offb
-67,Judit,Jdt
-68,Weisheit,Weish
-69,Tobia,Tob
-70,Sirach,Sir
-71,Baruch,Bar
-72,1 Makkabäer,1Makk
-73,2 Makkabäer,2Makk
-75,xEsther,xEst
-74,xDaniel,xDan
-76,Manasse,Man
+﻿"BookNumber","BookName","BookShortName"
+"1","Bereshit (בְּרֵאשִׁית, literally ""In the beginning"") — Genesis","1Mo"
+"2","Shemot (שְׁמֹות, literally ""The names [of]"") — Exodus","2Mo"
+"3","Vayikra (וַיִּקְרָא, literally ""And He called"") — Leviticus","3Mo"
+"4","Bemidbar (בְּמִדְבַּר, literally ""In the desert [of]"") — Numbers","4Mo"
+"5","Devarim (דְּבָרִים, literally ""Things"" or ""Words"")","5Mo"
+"6","Yĕhôshúa‘ (יְהוֹשֻעַ) — Joshua","Jos"
+"7","Shophtim (שֹׁפְטִים) — Judges","Ri"
+"9","Shmû’ēl (שְׁמוּאֵל) א — Samuel","1Sam"
+"10","Shmû’ēl (שְׁמוּאֵל) ב — Samuel","2Sam"
+"11","M'lakhim (מְלָכִים) א — Kings","1Kö"
+"12","M'lakhim (מְלָכִים) ב — Kings","2Kö"
+"23","Yĕsha‘ăyāhû (יְשַׁעְיָהוּ) — Isaiah","Jes"
+"24","Yirmyāhû (יִרְמְיָהוּ) — Jeremiah","Jer"
+"26","Yĕkhezqiēl (יְחֶזְקֵאל) — Ezekiel","Hes"
+"28","Hôshēa‘ (הוֹשֵׁעַ) — Hosea","Hos"
+"29","Yô’ēl (יוֹאֵל) — Joel","Joe"
+"30","‘Āmôs (עָמוֹס) — Amos","Am"
+"31","‘Ōvadhyāh (עֹבַדְיָה) — Obadiah","Ob"
+"32","Yônāh (יוֹנָה) — Jonah","Jon"
+"33","Mîkhāh (מִיכָה) — Micah","Mi"
+"34","Nakḥûm (נַחוּם) — Nahum","Nah"
+"35","Khăvhakûk (חֲבַקּוּק) — Habakkuk","Hab"
+"36","Tsĕphanyāh (צְפַנְיָה) — Zephaniah","Zeph"
+"37","Khaggai (חַגַּי) — Haggai","Haggai"
+"38","Zkharyāh (זְכַרְיָה) — Zechariah","Sach"
+"39","Mal’ākhî (מַלְאָכִי) — Malachi","Mal"
+"19","Tehillim (תְהִלִּים) — Psalms","Ps"
+"20","Mishlei (מִשְׁלֵי) — Proverbs","Spr"
+"18","Iyyôbh (אִיּוֹב) — Job","Hi"
+"22","Shīr Hashīrīm (שִׁיר הַשִּׁירִים, literally ""Song of songs"", also known as ""Song of Solomon"") — Song of Songs","Hl"
+"8","Rūth (רוּת) — Ruth","Rt"
+"25","Eikhah (אֵיכָה) — Lamentations","Kla"
+"21","Qōheleth (קֹהֶלֶת) — Ecclesiastes","Pred"
+"17","Estēr (אֶסְתֵר) — Esther","Est"
+"27","Dānî'ēl (דָּנִיֵּאל) — Daniel","Dan"
+"15","‘Ezrā (עֶזְרָא) א — Ezra","Esr"
+"16","‘Ezrā (עֶזְרָא) ב — Nehemiah","Neh"
+"13","Divrei ha-Yamim (דִּבְרֵי הַיָּמִים) א — Chronicles","1Chr"
+"14","Divrei ha-Yamim (דִּבְרֵי הַיָּמִים) ב — Chronicles","2Chr"
+"67","Judit","Jdt"
+"68","Weisheit","Weish"
+"69","Tobia","Tob"
+"70","Sirach","Sir"
+"71","Baruch","Bar"
+"72","1 Makkabäer","1Makk"
+"73","2 Makkabäer","2Makk"
+"75","xEsther","xEst"
+"74","xDaniel","xDan"
+"76","Manasse","Man"
+"40","Matthäus","Mt"
+"41","Markus","Mk"
+"42","Lukas","Lk"
+"43","Johannes","Joh"
+"44","Apostelgeschichte","Apg"
+"45","Römer","Röm"
+"46","1 Korinther","1Kor"
+"47","2 Korinther","2Kor"
+"48","Galater","Gal"
+"49","Epheser","Eph"
+"50","Philipper","Phil"
+"51","Kolosser","Kol"
+"52","1 Thessalonicher","1Thes"
+"53","2 Thessalonicher","2Thes"
+"54","1 Timotheus","1Tim"
+"55","2 Timotheus","2Tim"
+"56","Titus","Tit"
+"57","Philemon","Phim"
+"58","Hebräer","Hebr"
+"59","Jakobus","Jak"
+"60","1 Petrus","1Petr"
+"61","2 Petrus","2Petr"
+"62","1 Johannes","1Jo"
+"63","2 Johannes","2Jo"
+"64","3 Johannes","3Jo"
+"65","Judas","Jud"
+"66","Offenbarung","Offb"
