@@ -1,0 +1,32 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+CsvSheetEditor
+</name>
+</assembly>
+<members>
+<member name="T:CsvSheetEditor.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:CsvSheetEditor.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:CsvSheetEditor.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="M:CsvSheetEditor.CsvEditor.SaveCurrentCsvFileAs">
+ <summary>
+ Save the file at a new location
+ </summary>
+ <returns>True if saved successfully, False if user aborted or error</returns>
+</member>
+</members>
+</doc>

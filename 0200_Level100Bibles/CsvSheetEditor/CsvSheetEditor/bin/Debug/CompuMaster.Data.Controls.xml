@@ -1,0 +1,314 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+CompuMaster.Data.Controls
+</name>
+</assembly>
+<members>
+<member name="T:CompuMaster.Data.Windows.CellCopyingContextMenu">
+ <summary>
+ Context menu default entries
+ </summary>
+ <remarks>
+ This Code comes mostly from CompuMaster.Data.Manipulation
+ </remarks>
+</member>
+<member name="P:CompuMaster.Data.Windows.CellCopyingContextMenu.DataGridView">
+ <summary>
+ Assign the DataGridView control for target operations of this context menu and register this context menu in the DataGridView control if no other context menu has already been registered
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:CompuMaster.Data.Windows.CellCopyingContextMenu.CreateDataTableFromMarkedCells">
+ <summary>
+ Creates a DataTabe only with the cells the user has selected.
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:CompuMaster.Data.Windows.CellCopyingContextMenu.CopyFullTableToClipboardToolStripMenuItem_Click(System.Object,System.EventArgs)">
+ <summary>
+ Copies the full table into the clipboard
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+ <remarks></remarks>
+</member>
+<member name="M:CompuMaster.Data.Windows.CellCopyingContextMenu.CopySelectedCellsToClipboardwithHeadersToolStripMenuItem_Click(System.Object,System.EventArgs)">
+ <summary>
+ Copies the selected cells into the clipboard including headers
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+ <remarks></remarks>
+</member>
+<member name="M:CompuMaster.Data.Windows.CellCopyingContextMenu.CopySelectedCellsToClipboardwithoutHeadersToolStripMenuItem_Click(System.Object,System.EventArgs)">
+ <summary>
+ Copies the selected cells into the clipboard without headers
+ </summary>e
+ <param name="sender"></param>
+ <param name="e"></param>
+ <remarks></remarks>
+</member>
+<member name="M:CompuMaster.Data.Windows.CellCopyingContextMenu.PreferredCulture">
+ <summary>
+  Returns the selected culture
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="T:CompuMaster.Data.Windows.CellCopyingContextMenu.GridViewCellMetaInfo">
+ <summary>
+ Required class to sort the selected cells collection 
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="T:CompuMaster.Data.Windows.DataGridView">
+ <summary>
+ A data grid view class implementing easy access for quick edit data manipulation
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:CompuMaster.Data.Windows.DataGridView.SelectCommand">
+ <summary>
+ The SELECT command for querying the data
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:CompuMaster.Data.Windows.DataGridView.SaveDataChangesAfterEveryRowChange">
+ <summary>
+ Immediately save/upload changes to the data source after a row change occured
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:CompuMaster.Data.Windows.DataGridView.DataContainer">
+ <summary>
+ The data container holds all necessary data for edit and upload
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:CompuMaster.Data.Windows.DataGridView.DataSource">
+ <summary>
+ DataSource of base datagrid should not be used any more, use DataContainer or DataSourceObject property instead
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:CompuMaster.Data.Windows.DataGridView.DataSourceObject">
+ <summary>
+ The DataSource object as used by the underlying DataGridView
+ </summary>
+ <returns></returns>
+</member>
+<member name="E:CompuMaster.Data.Windows.DataGridView.DataChanged">
+ <summary>
+ Fires when the DataGridView changed data to the underlying data table
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:CompuMaster.Data.Windows.DataGridView.DataGridView_CellEnter(System.Object,System.Windows.Forms.DataGridViewCellEventArgs)">
+ <summary>
+ Auto-Enter into cells if there is no active multi-cell-selection
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+ <remarks></remarks>
+</member>
+<member name="M:CompuMaster.Data.Windows.DataGridView.OnDataChanged">
+ <summary>
+ Write back all changed data based on the DataChanged event
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:CompuMaster.Data.Windows.DataGridView.LoadData">
+ <summary>
+ Load the data from the data source using the given SelectCommand and its connection
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:CompuMaster.Data.Windows.DataGridView.IsLoading">
+ <summary>
+ Indicates that data (re-)loading is in progress
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:CompuMaster.Data.Windows.DataGridView.LoadData(System.Boolean)">
+ <summary>
+ Load the data from the data source using the given SelectCommand and its connection
+ </summary>
+ <param name="autoResizeColumnsAndRows"></param>
+ <remarks></remarks>
+</member>
+<member name="F:CompuMaster.Data.Windows.DataGridView.PreservedSortedColumnIndex">
+ <summary>
+ The preserved sorting column index
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:CompuMaster.Data.Windows.DataGridView.PreservedSortOrder">
+ <summary>
+ The preserved sort order direction
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:CompuMaster.Data.Windows.DataGridView.PreserveSortOrder">
+ <summary>
+ Preserve the current sorting
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:CompuMaster.Data.Windows.DataGridView.RestoreSortOrder">
+ <summary>
+ Restore the preserved sorting
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:CompuMaster.Data.Windows.DataGridView.PreservedColumns">
+ <summary>
+ A collection of cloned columns for later re-establishing after a reload of data
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:CompuMaster.Data.Windows.DataGridView.PreservedRows">
+ <summary>
+ A collection of cloned rows for later re-establishing after a reload of data
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:CompuMaster.Data.Windows.DataGridView.PreserveColumnSettings">
+ <summary>
+ Save a cloned collection of the columns and rows for later restoring of collection and row heights
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:CompuMaster.Data.Windows.DataGridView.RestoreColumnSettings">
+ <summary>
+ Restore the preserved columns collection by cloning each pre-defined column from the origin collection
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:CompuMaster.Data.Windows.DataGridView.RestoreRowSettings">
+ <summary>
+ Restore the preserved row heights
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:CompuMaster.Data.Windows.DataGridView.PreservedCurrentCellRowIndex">
+ <summary>
+ The preserved row index of the current position in the gridview
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:CompuMaster.Data.Windows.DataGridView.PreservedCurrentCellColumnIndex">
+ <summary>
+ The preserved column index of the current position in the gridview
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:CompuMaster.Data.Windows.DataGridView.PreserveCurrentCell">
+ <summary>
+ Preserve the current position in the gridview
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:CompuMaster.Data.Windows.DataGridView.RestoreCurrentCell">
+ <summary>
+ Restore the preserved position in the gridview so that current view and position doesn't jump unexpectedly
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:CompuMaster.Data.Windows.DataGridView.PreservedCurrentVerticalScrollBarValue">
+ <summary>
+ The preserved vertical scrollbar value of the current position in the gridview
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:CompuMaster.Data.Windows.DataGridView.PreservedCurrentHorizontalScrollBarValue">
+ <summary>
+ The preserved horizontal scrollbar value of the current position in the gridview
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:CompuMaster.Data.Windows.DataGridView.PreservedFirstDisplayedScrollingRowIndex">
+ <summary>
+ The preserved row index of the first displayed cell in the gridview
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:CompuMaster.Data.Windows.DataGridView.PreservedFirstDisplayedScrollingColumnIndex">
+ <summary>
+ The preserved column index of the first displayed cell in the gridview
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:CompuMaster.Data.Windows.DataGridView.PreserveScrollPosition">
+ <summary>
+ Preserve the scroll position of the gridview
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:CompuMaster.Data.Windows.DataGridView.RestoreScrollPostion">
+ <summary>
+ Restore the scroll position of the gridview
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:CompuMaster.Data.Windows.DataGridView.SaveDataChanges">
+ <summary>
+ Save/upload the data changes
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:CompuMaster.Data.Windows.DataGridView.IgnoreErrorsOnLayoutingBinaryValues">
+ <summary>
+ Ignore errors when binary arrays such as image, timestamp or binary fields will be tryed to be presented as a picture
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks>The default behaviour of .NET will be changed here to ignore such errors per default for increased stability of this control. Otherwise, the default behaviour of .NET would try to draw those fields and run into exceptions sometimes.</remarks>
+</member>
+<member name="M:CompuMaster.Data.Windows.DataGridView.DataGridViewQuickEdit_DataError(System.Object,System.Windows.Forms.DataGridViewDataErrorEventArgs)">
+ <summary>
+ Ignore byte-array/image errors
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+ <remarks></remarks>
+</member>
+<member name="M:CompuMaster.Data.Windows.DataGridView._DataContainer_DataChanged">
+ <summary>
+ Forward DataChanged event
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:CompuMaster.Data.Windows.DataGridView.OnPaint(System.Windows.Forms.PaintEventArgs)">
+ <summary>
+ Prevent paint exceptions due to scrolling position issues (bug in MS gridview)
+ </summary>
+ <param name="e"></param>
+ <remarks>Workaround recommendation source: https://connect.microsoft.com/VisualStudio/feedback/details/673075/datagridview-control-crashed-gui-shows-white-area-with-red-cross-app-shows-error-below </remarks>
+</member>
+<member name="M:CompuMaster.Data.Windows.Utils.LoadDataForManipulationViaQuickEdit(System.Data.IDbCommand)">
+ <summary>
+ Execute query and provide results
+ </summary>
+</member>
+<member name="M:CompuMaster.Data.Windows.Utils.SaveData(CompuMaster.Data.DataManipulationResult)">
+ <summary>
+ Save changed data to the data source
+ </summary>
+</member>
+<member name="M:CompuMaster.Data.Windows.Utils.CloseAndDisposeQuickEditDataContainer(CompuMaster.Data.DataManipulationResult)">
+ <summary>
+ Close the currently used connection
+ </summary>
+ <remarks></remarks>
+</member>
+</members>
+</doc>

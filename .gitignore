@@ -4,3 +4,5 @@
 /0110_RegisterZefaniaXmlFiles/obj
 /0110_RegisterZefaniaXmlFiles/packages
 **.vshost.exe*
+/0200_Level100Bibles/CsvSheetEditor/CsvSheetEditor/.vs
+/0200_Level100Bibles/CsvSheetEditor/CsvSheetEditor/obj
