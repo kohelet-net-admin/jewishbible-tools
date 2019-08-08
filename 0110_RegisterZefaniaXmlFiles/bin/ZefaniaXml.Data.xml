@@ -28,6 +28,13 @@ ZefaniaXml.Data
  </summary>
  <returns></returns>
 </member>
+<member name="P:KoheletNetwork.ZefaniaXmlBible.BibleWithoutCopyright">
+ <summary>
+ Is the current bible without copyright or similar protection
+ </summary>
+ <returns></returns>
+ <remarks>Note: copyright protection is always there except it's declared public domain</remarks>
+</member>
 <member name="P:KoheletNetwork.ZefaniaXmlBible.BibleInfoTitle">
  <summary>
  Full bible name
