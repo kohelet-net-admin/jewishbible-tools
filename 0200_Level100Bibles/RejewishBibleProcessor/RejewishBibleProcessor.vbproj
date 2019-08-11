@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{560E42EE-5590-4E4B-B9AC-C4238CF73608}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <StartupObject>RejewishBibleProcessor.MainModule</StartupObject>
-    <RootNamespace>RejewishBibleProcessor</RootNamespace>
+    <StartupObject>KoheletNetwork.RejewishBibleProcessor.MainModule</StartupObject>
+    <RootNamespace>KoheletNetwork.RejewishBibleProcessor</RootNamespace>
     <AssemblyName>RejewishBibleProcessor</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>Console</MyType>
@@ -90,8 +90,9 @@
   <ItemGroup>
     <Compile Include="BibleProcessor.vb" />
     <Compile Include="CommandlineOptions.vb" />
-    <Compile Include="Config.vb" />
+    <Compile Include="Configuration.vb" />
     <Compile Include="FileFilter.vb" />
+    <Compile Include="Level100Support.vb" />
     <Compile Include="MainModule.vb" />
     <Compile Include="AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">

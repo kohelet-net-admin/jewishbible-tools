@@ -1,4 +1,4 @@
-﻿Public Class Config
+﻿Public Class Configuration
 
     Public Sub New(configData As System.Data.DataTable)
 
@@ -44,5 +44,26 @@
         Public Property NewBibleInfoIdentifier As String
         Public Property NewBibleInfoDescription As String
     End Class
+
+    ''' <summary>
+    ''' Load a configuration CSV file
+    ''' </summary>
+    ''' <param name="configName">Config file name without .csv extension</param>
+    ''' <param name="options">Commandline option data</param>
+    ''' <param name="failOnFileNotFound">Exception will be thrown if True and file doesn't exist; if False and file doesn't exist, null will be returned</param>
+    ''' <returns></returns>
+    Public Shared Function LoadConfig(configName As String, options As CommandlineOptions, failOnFileNotFound As Boolean) As System.Data.DataTable
+        Dim ConfigPath As String = System.IO.Path.Combine(System.Environment.CurrentDirectory, options.ConfigPath, configName & ".csv")
+        If failOnFileNotFound Then
+            If System.IO.File.Exists(ConfigPath) = False Then Throw New System.IO.FileNotFoundException("File not found: " & ConfigPath)
+            Return CompuMaster.Data.Csv.ReadDataTableFromCsvFile(ConfigPath, True, "UTF-8", ","c, """"c)
+        Else
+            If System.IO.File.Exists(ConfigPath) = True Then
+                Return CompuMaster.Data.Csv.ReadDataTableFromCsvFile(ConfigPath, True, "UTF-8", ","c, """"c)
+            Else
+                Return Nothing
+            End If
+        End If
+    End Function
 
 End Class

@@ -123,14 +123,14 @@ Module MainModule
                     End If
                     'Provide books listing for each bible
                     Try
-                        ExportBibleBookNames(FullXmlFilePath & ".books.csv", ZefaniaData)
+                        ZefaniaStatistics.ExportBibleBookNames(FullXmlFilePath & ".books.csv", ZefaniaData)
                     Catch ex As Exception
                         Console.WarnLine("WARNING: " & ex.Message)
                         'Console.WarnLine("WARNING: " & ex.ToString)
                     End Try
                     'Provide bible statistics for each bible
                     Try
-                        ExportBibleStatistics(FullXmlFilePath & ".statistics.csv", ZefaniaData)
+                        ZefaniaStatistics.ExportBibleStatistics(FullXmlFilePath & ".statistics.csv", ZefaniaData)
                     Catch ex As Exception
                         Console.WarnLine("WARNING: " & ex.Message)
                         'Console.WarnLine("WARNING: " & ex.ToString)
@@ -172,85 +172,6 @@ Module MainModule
             table.Columns.Add(columnName, GetType(String))
         End If
     End Sub
-
-    Public Sub ExportBibleBookNames(exportCsvFilePath As String, bible As ZefaniaXmlBible)
-        Dim Result As New DataTable("BibleBooks")
-        Result.Columns.Add("Index", GetType(Integer))
-        Result.Columns.Add("BookNumber", GetType(Integer))
-        Result.Columns.Add("BookName", GetType(String))
-        Result.Columns.Add("BookShortName", GetType(String))
-        For MyCounter As Integer = 0 To bible.Books.Count - 1
-            Dim Row As DataRow = Result.NewRow
-            Row(0) = MyCounter
-            Row(1) = bible.Books(MyCounter).BookNumber
-            Row(2) = bible.Books(MyCounter).BookName
-            Row(3) = bible.Books(MyCounter).BookShortName
-            Result.Rows.Add(Row)
-        Next
-        'Result = CompuMaster.Data.DataTables.CreateDataTableClone(Result, "", "BookNumber") 
-        CompuMaster.Data.Csv.WriteDataTableToCsvFile(exportCsvFilePath, Result, True, System.Globalization.CultureInfo.InvariantCulture)
-    End Sub
-
-    Public Sub ExportBibleStatistics(exportCsvFilePath As String, bible As ZefaniaXmlBible)
-        Dim Result As New DataTable("BibleBooks")
-        Result.Columns.Add("Index", GetType(Integer))
-        Result.Columns.Add("BookNumber", GetType(Integer))
-        Result.Columns.Add("BookName", GetType(String))
-        Result.Columns.Add("BookShortName", GetType(String))
-        Result.Columns.Add("ChaptersCount", GetType(Integer))
-        Result.Columns.Add("CaptionsCountTotal", GetType(Integer))
-        Result.Columns.Add("CaptionsCountPerChapter", GetType(String))
-        Result.Columns.Add("VersesCountTotal", GetType(Integer))
-        Result.Columns.Add("VersesCountPerChapter", GetType(String))
-        For MyCounter As Integer = 0 To bible.Books.Count - 1
-            Dim Row As DataRow = Result.NewRow
-            Row(0) = MyCounter
-            Row(1) = bible.Books(MyCounter).BookNumber
-            Row(2) = bible.Books(MyCounter).BookName
-            Row(3) = bible.Books(MyCounter).BookShortName
-            Row(4) = bible.Books(MyCounter).Chapters.Count
-            Row(5) = CaptionsCountTotalPerChapter(bible.Books(MyCounter))
-            Row(6) = CaptionsCountPerChapter(bible.Books(MyCounter))
-            Row(7) = VersesCountTotalPerChapter(bible.Books(MyCounter))
-            Row(8) = VersesCountPerChapter(bible.Books(MyCounter))
-            Result.Rows.Add(Row)
-        Next
-        'Result = CompuMaster.Data.DataTables.CreateDataTableClone(Result, "", "BookNumber") 
-        CompuMaster.Data.Csv.WriteDataTableToCsvFile(exportCsvFilePath, Result, True, System.Globalization.CultureInfo.InvariantCulture)
-    End Sub
-
-    Private Function CaptionsCountTotalPerChapter(book As ZefaniaXmlBook) As Integer
-        Dim Result As Integer
-        For Each Chapter As ZefaniaXmlChapter In book.Chapters
-            Result += Chapter.Captions.Count
-        Next
-        Return Result
-    End Function
-    Private Function VersesCountTotalPerChapter(book As ZefaniaXmlBook) As Integer
-        Dim Result As Integer
-        For Each Chapter As ZefaniaXmlChapter In book.Chapters
-            Result += Chapter.Verses.Count
-        Next
-        Return Result
-    End Function
-    Private Function CaptionsCountPerChapter(book As ZefaniaXmlBook) As String
-        Dim Result As New System.Text.StringBuilder
-        For Each Chapter As ZefaniaXmlChapter In book.Chapters
-            If Chapter.Captions.Count > 0 Then
-                If Result.Length > 0 Then Result.Append("|")
-                Result.Append(Chapter.ChapterNumber & ":" & Chapter.Captions.Count)
-            End If
-        Next
-        Return Result.ToString
-    End Function
-    Private Function VersesCountPerChapter(book As ZefaniaXmlBook) As String
-        Dim Result As New System.Text.StringBuilder
-        For Each Chapter As ZefaniaXmlChapter In book.Chapters
-            If Result.Length > 0 Then Result.Append("|")
-            Result.Append(Chapter.ChapterNumber & ":" & Chapter.Verses.Count)
-        Next
-        Return Result.ToString
-    End Function
 
     Private TerminateProcessImmediately As Boolean = False
 

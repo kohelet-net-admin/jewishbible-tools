@@ -3,17 +3,17 @@
 Public Class CommandlineOptions
 
     ''' <summary>
-    ''' Path to configuration CSV file
+    ''' Directory to configuration CSV file
     ''' </summary>
     ''' <returns></returns>
-    <CommandLine.Option("c", "configpath", Required:=True, HelpText:="Path to configuration CSV file")>
+    <CommandLine.Option("c", "configDir", Required:=True, HelpText:="Directory path to configuration directory with CSV config files")>
     Public Property ConfigPath As String
 
     ''' <summary>
     ''' Path to configuration CSV file
     ''' </summary>
     ''' <returns></returns>
-    <CommandLine.Option("r", "indexCsvRegisteredBibles", Required:=True, HelpText:="Path to index CSV file of registered bibles")>
+    <CommandLine.Option("r", "indexCsvRegisteredBibles", Required:=True, HelpText:="Directory path to index CSV file of registered bibles")>
     Public Property IndexOfRegisteredBiblesPath As String
 
     ''' <summary>

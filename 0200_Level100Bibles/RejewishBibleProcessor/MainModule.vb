@@ -14,12 +14,10 @@ Module MainModule
     Public Function RunAndReturnExitCode(options As CommandlineOptions) As Integer
         Try
             CompuMaster.Console.WriteLine("Reading configuration file " & options.ConfigPath)
-            Dim ConfigPath As String = System.IO.Path.Combine(System.Environment.CurrentDirectory, options.ConfigPath)
-            If System.IO.File.Exists(ConfigPath) = False Then Throw New System.IO.FileNotFoundException("File not found: " & ConfigPath)
-            Dim ConfigData As System.Data.DataTable = CompuMaster.Data.Csv.ReadDataTableFromCsvFile(ConfigPath, True, "UTF-8", ","c, """"c)
+            Dim ConfigData As System.Data.DataTable = Configuration.LoadConfig("Bibles.config", options, True)
             CompuMaster.Console.WriteLine("Reading configuration file completed")
             CompuMaster.Console.WriteLine("Reading index of registered ZefaniaXml bibles at " & options.IndexOfRegisteredBiblesPath)
-            Dim IndexOfRegisteredBiblesPath As String = System.IO.Path.Combine(System.Environment.CurrentDirectory, options.ConfigPath)
+            Dim IndexOfRegisteredBiblesPath As String = System.IO.Path.Combine(System.Environment.CurrentDirectory, options.StandardBiblesDirectory, "index.csv")
             If System.IO.File.Exists(IndexOfRegisteredBiblesPath) = False Then Throw New System.IO.FileNotFoundException("File not found: " & IndexOfRegisteredBiblesPath)
             Dim IndexOfRegisteredBibles As System.Data.DataTable = CompuMaster.Data.Csv.ReadDataTableFromCsvFile(IndexOfRegisteredBiblesPath, True, "UTF-8", ","c, """"c)
             CompuMaster.Console.WriteLine("Reading index of registered ZefaniaXml bibles completed")
@@ -31,17 +29,24 @@ Module MainModule
             Dim LogFileHtml As String = System.IO.Path.Combine(options.StandardBiblesDirectory, "log.0200_BibleProcessor.html")
             Dim XsdDirectory As String = System.IO.Path.Combine(options.XsdSchemaDirectory)
             If System.IO.Directory.Exists(XsdDirectory) = False Then Throw New System.IO.DirectoryNotFoundException("Directory not found: " & XsdDirectory)
-            Dim ProcessorConfig As New Config(ConfigData)
+            Dim ProcessorConfig As New Configuration(ConfigData)
 
             'BiblesToProcess
             For MyCounter As Integer = 0 To ProcessorConfig.BiblesToProcess.Count - 1
                 If TerminateProcessImmediately Then Exit For
-                CompuMaster.Console.WriteLine()
                 If IsMatchAlwaysIgnorePath(ProcessorConfig.BiblesToProcess(MyCounter).Path, ProcessorConfig) = False Then
-                    CompuMaster.Console.WriteLine("Bible in process: " & ProcessorConfig.BiblesToProcess(MyCounter).Path)
-                    Dim Bible As KoheletNetwork.ZefaniaXmlBible
-                    Bible = BibleProcessor.CreateLevel100Bible(ProcessorConfig.BiblesToProcess(MyCounter), options)
-
+                    Try
+                        CompuMaster.Console.WriteLine()
+                        CompuMaster.Console.WriteLine("Bible in process: " & ProcessorConfig.BiblesToProcess(MyCounter).Path)
+                        Dim Bible As KoheletNetwork.ZefaniaXmlBible
+                        Bible = BibleProcessor.CreateLevel100Bible(ProcessorConfig.BiblesToProcess(MyCounter), options)
+                    Catch ex As Exception
+                        If options.Verbose Then
+                            CompuMaster.Console.WarnLine("ERROR: " & ex.ToString)
+                        Else
+                            CompuMaster.Console.WarnLine("ERROR: " & ex.Message)
+                        End If
+                    End Try
                 End If
             Next
 
@@ -64,7 +69,7 @@ Module MainModule
         End Try
     End Function
 
-    Private Function IsMatchAlwaysIgnorePath(biblePath As String, processorConfig As Config) As Boolean
+    Private Function IsMatchAlwaysIgnorePath(biblePath As String, processorConfig As Configuration) As Boolean
         For MyIgnoreRuleCounter As Integer = 0 To processorConfig.AlwaysIgnorePath.Count - 1
             Dim CurrentCheckRule As String = processorConfig.AlwaysIgnorePath(MyIgnoreRuleCounter)
             If FilterUtils.IsFilterMatch(biblePath, CurrentCheckRule, FilterUtils.CaseSensitivity.Windows) Then
