@@ -88,6 +88,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BibleProcessor.vb" />
     <Compile Include="CommandlineOptions.vb" />
     <Compile Include="Config.vb" />
     <Compile Include="FileFilter.vb" />

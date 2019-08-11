@@ -3,6 +3,7 @@
 Module MainModule
 
     Function Main(ByVal args As String()) As Integer
+        AddHandler System.Console.CancelKeyPress, AddressOf ConsoleAppControlCKeyHandler
         Return CommandLine.Parser.Default.ParseArguments(Of CommandlineOptions)(args) _
         .MapResult(
              (Function(opts As CommandlineOptions) RunAndReturnExitCode(opts)),
@@ -26,19 +27,33 @@ Module MainModule
             If System.IO.Directory.Exists(InputBaseDir) = False Then Throw New System.IO.DirectoryNotFoundException("Directory not found: " & InputBaseDir)
             Dim OutputBaseDir As String = System.IO.Path.Combine(System.Environment.CurrentDirectory, options.JewishBiblesDirectory)
             If System.IO.Directory.Exists(InputBaseDir) = False Then Throw New System.IO.DirectoryNotFoundException("Directory not found: " & OutputBaseDir)
+            Dim LogFileTxt As String = System.IO.Path.Combine(options.StandardBiblesDirectory, "log.0200_BibleProcessor.txt")
+            Dim LogFileHtml As String = System.IO.Path.Combine(options.StandardBiblesDirectory, "log.0200_BibleProcessor.html")
+            Dim XsdDirectory As String = System.IO.Path.Combine(options.XsdSchemaDirectory)
+            If System.IO.Directory.Exists(XsdDirectory) = False Then Throw New System.IO.DirectoryNotFoundException("Directory not found: " & XsdDirectory)
             Dim ProcessorConfig As New Config(ConfigData)
 
             'BiblesToProcess
             For MyCounter As Integer = 0 To ProcessorConfig.BiblesToProcess.Count - 1
+                If TerminateProcessImmediately Then Exit For
                 CompuMaster.Console.WriteLine()
                 If IsMatchAlwaysIgnorePath(ProcessorConfig.BiblesToProcess(MyCounter).Path, ProcessorConfig) = False Then
                     CompuMaster.Console.WriteLine("Bible in process: " & ProcessorConfig.BiblesToProcess(MyCounter).Path)
+                    Dim Bible As KoheletNetwork.ZefaniaXmlBible
+                    Bible = BibleProcessor.CreateLevel100Bible(ProcessorConfig.BiblesToProcess(MyCounter), options)
 
                 End If
             Next
 
-            'Not fully implemented 
-            Return 10
+            If TerminateProcessImmediately = False Then
+                'CompuMaster.Data.Csv.WriteDataTableToCsvFile(XmlIndexDetailsCsvFile, xmlFiles, True, System.Globalization.CultureInfo.InvariantCulture, "UTF-8", ",", """"c)
+                'CompuMaster.Data.XlsEpplus.WriteDataTableToXlsFileAndFirstSheet(XmlIndexDetailsXlsxFile, xmlFiles)
+            End If
+            CompuMaster.Console.SaveHtmlLog(LogFileHtml)
+            CompuMaster.Console.SavePlainTextLog(LogFileTxt)
+
+            'End program with success
+            Return 0
         Catch ex As Exception
             If options.Verbose Then
                 CompuMaster.Console.WarnLine("CRITICAL ERROR: " & ex.ToString)
@@ -62,4 +77,12 @@ Module MainModule
         Next
         Return False
     End Function
+
+    Private TerminateProcessImmediately As Boolean = False
+
+    Sub ConsoleAppControlCKeyHandler(sender As Object, args As ConsoleCancelEventArgs)
+        TerminateProcessImmediately = True
+        args.Cancel = True
+    End Sub
+
 End Module

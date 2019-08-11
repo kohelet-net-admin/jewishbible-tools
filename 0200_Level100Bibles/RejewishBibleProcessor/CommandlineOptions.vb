@@ -37,4 +37,10 @@ Public Class CommandlineOptions
     <CommandLine.Option("o", "outputDir", Required:=True, HelpText:="Path to output directory for re-Jewished bibles")>
     Public Property JewishBiblesDirectory As String
 
+    Public ReadOnly Property XsdSchemaDirectory As String
+        Get
+            Return System.IO.Path.Combine(Me.StandardBiblesDirectory, "..\Schema")
+        End Get
+    End Property
+
 End Class
