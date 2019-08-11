@@ -6,3 +6,7 @@
 **.vshost.exe*
 /0200_Level100Bibles/CsvSheetEditor/.vs
 /0200_Level100Bibles/CsvSheetEditor/obj
+/0200_Level100Bibles/RejewishBibleProcessor/packages
+/0200_Level100Bibles/RejewishBibleProcessor/.vs
+/0200_Level100Bibles/RejewishBibleProcessor/obj
+/0200_Level100Bibles/RejewishBibleProcessor/bin
