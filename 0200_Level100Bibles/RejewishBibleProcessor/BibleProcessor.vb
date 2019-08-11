@@ -24,7 +24,38 @@ Public Class BibleProcessor
         'Fill up missing books as far as possible
         If args.PathAdditionalSource <> Nothing Then
             'Fill up missing books from additional source
-            Throw New NotImplementedException("Fill-up with additional books from another bible")
+            Dim Bible2 As New ZefaniaXmlBible(System.IO.Path.Combine(System.Environment.CurrentDirectory, options.StandardBiblesDirectory, args.PathAdditionalSource), options.XsdSchemaDirectory)
+            For MyAimedOrderCounter As Integer = DesiredBookOrderAndTranslation.Count - 1 To 0 Step -1
+                'Find book match in current bible
+                Dim MatchingBibleBookIndex As Integer = -1
+                For MyBookCounter As Integer = 0 To Bible.Books.Count - 1
+                    If DesiredBookOrderAndTranslation(MyAimedOrderCounter).BookID = Bible.Books(MyBookCounter).BookNumber Then
+                        'Found the book reference for desired entry
+                        MatchingBibleBookIndex = MyBookCounter
+                        Exit For
+                    End If
+                Next
+                If MatchingBibleBookIndex = -1 Then
+                    'Remove entry of desired book without bible book match 
+                    'Find book match in 2nd bible
+                    Dim MatchingBible2BookIndex As Integer = -1
+                    For MyBookCounter As Integer = 0 To Bible2.Books.Count - 1
+                        If DesiredBookOrderAndTranslation(MyAimedOrderCounter).BookID = Bible2.Books(MyBookCounter).BookNumber Then
+                            'Found the book reference for desired entry
+                            MatchingBible2BookIndex = MyBookCounter
+                            Exit For
+                        End If
+                    Next
+                    If MatchingBible2BookIndex <> -1 Then
+                        'Copy book from 2nd bible into 1st bible
+                        If Bible.SchemaName = Bible2.SchemaName Then
+                            Bible.AddBook(Bible2.Books(MatchingBible2BookIndex))
+                        Else
+                            Throw New NotImplementedException("Copying books between bibles of differing XML schemas not implemented, yet")
+                        End If
+                    End If
+                End If
+            Next
         End If
         'Clean up all desired books not available in bible collection
         For MyAimedOrderCounter As Integer = DesiredBookOrderAndTranslation.Count - 1 To 0 Step -1
@@ -96,6 +127,8 @@ Public Class BibleProcessor
             Bible.Books(MyAimedOrderCounter).BookName = DesiredBookOrderAndTranslation(MyAimedOrderCounter).BookName
             Bible.Books(MyAimedOrderCounter).BookShortName = DesiredBookOrderAndTranslation(MyAimedOrderCounter).BookShortName
         Next
+        CompuMaster.Console.WriteLine("Output books coolection contains " & Bible.Books.Count & " books")
+        CompuMaster.Console.WriteLine("Output books coolection's 1st book name: " & Bible.Books(0).BookName)
 
         'Apply new bible meta information
         Bible.BibleName = args.NewBibleName.Replace("{0}", Bible.BibleInfoTitle).Replace("{LEVEL}", 100)
