@@ -31,6 +31,10 @@ Module MainModule
             If System.IO.Directory.Exists(XsdDirectory) = False Then Throw New System.IO.DirectoryNotFoundException("Directory not found: " & XsdDirectory)
             Dim ProcessorConfig As New Configuration(ConfigData)
 
+            'Cleanup of output files
+            CompuMaster.Console.WriteLine("Clean-up (.xml, .csv, .log) at output directory " & OutputBaseDir)
+            CleanupOutputDirectory(OutputBaseDir, False)
+
             'BiblesToProcess
             For MyCounter As Integer = 0 To ProcessorConfig.BiblesToProcess.Count - 1
                 If TerminateProcessImmediately Then Exit For
@@ -88,6 +92,29 @@ Module MainModule
     Sub ConsoleAppControlCKeyHandler(sender As Object, args As ConsoleCancelEventArgs)
         TerminateProcessImmediately = True
         args.Cancel = True
+    End Sub
+
+    Public Sub CleanupOutputDirectory(directory As String, removeIfEmpty As Boolean)
+        For Each fileName As String In System.IO.Directory.EnumerateFiles(directory)
+            Select Case System.IO.Path.GetExtension(fileName).ToLowerInvariant
+                Case ".xml", ".csv", ".log"
+                    System.IO.File.Delete(fileName)
+            End Select
+        Next
+        For Each dirName As String In System.IO.Directory.EnumerateDirectories(directory)
+            If System.IO.Path.GetFileName(dirName).StartsWith(".") = False Then
+                CompuMaster.Console.WriteLine("CLEANUP: " & dirName)
+                CleanupOutputDirectory(dirName, True)
+            End If
+        Next
+        Dim DirIsEmpty As Boolean = True
+        For Each fsItemName As String In System.IO.Directory.EnumerateFileSystemEntries(directory)
+            CompuMaster.Console.WriteLine("FOUND: " & fsItemName)
+            DirIsEmpty = False
+        Next
+        If DirIsEmpty Then
+            System.IO.Directory.Delete(directory, False)
+        End If
     End Sub
 
 End Module
