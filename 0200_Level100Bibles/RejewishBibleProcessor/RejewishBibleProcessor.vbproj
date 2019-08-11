@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{560E42EE-5590-4E4B-B9AC-C4238CF73608}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <StartupObject>RejewishBibleProcessor.Module1</StartupObject>
+    <StartupObject>RejewishBibleProcessor.MainModule</StartupObject>
     <RootNamespace>RejewishBibleProcessor</RootNamespace>
     <AssemblyName>RejewishBibleProcessor</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -51,6 +51,9 @@
     <Reference Include="CommandLine, Version=2.6.0.0, Culture=neutral, PublicKeyToken=5a870481e358d379, processorArchitecture=MSIL">
       <HintPath>packages\CommandLineParser.2.6.0\lib\net461\CommandLine.dll</HintPath>
     </Reference>
+    <Reference Include="CompuMaster.Console, Version=2017.10.11.107, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\CompuMaster.Console.2017.10.11.107\lib\net45\CompuMaster.Console.dll</HintPath>
+    </Reference>
     <Reference Include="CompuMaster.Data, Version=2.8.2019.514, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\CompuMaster.Data.2.8.2019.514\lib\net20\CompuMaster.Data.dll</HintPath>
     </Reference>
@@ -86,7 +89,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CommandlineOptions.vb" />
-    <Compile Include="Module1.vb" />
+    <Compile Include="Config.vb" />
+    <Compile Include="FileFilter.vb" />
+    <Compile Include="MainModule.vb" />
     <Compile Include="AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>

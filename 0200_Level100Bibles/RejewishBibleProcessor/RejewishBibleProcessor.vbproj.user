@@ -4,6 +4,6 @@
     <ProjectView>ShowAllFiles</ProjectView>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
-    <StartArguments>-c ..\..\..\Bibles.config.csv</StartArguments>
+    <StartArguments>-c ..\..\..\Bibles.config.csv -r ..\..\..\..\..\zefania-xml-bibles\Bibles\index.csv -i ..\..\..\..\..\zefania-xml-bibles\Bibles -o ..\..\..\..\..\jewishbible</StartArguments>
   </PropertyGroup>
 </Project>
