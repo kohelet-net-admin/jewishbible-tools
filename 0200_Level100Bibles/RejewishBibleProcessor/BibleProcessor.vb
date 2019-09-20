@@ -22,9 +22,10 @@ Public Class BibleProcessor
 
         'Prepare books collection 
         'Fill up missing books as far as possible
+        Dim Bible2 As ZefaniaXmlBible = Nothing
         If args.PathAdditionalSource <> Nothing Then
             'Fill up missing books from additional source
-            Dim Bible2 As New ZefaniaXmlBible(System.IO.Path.Combine(System.Environment.CurrentDirectory, options.StandardBiblesDirectory, args.PathAdditionalSource), options.XsdSchemaDirectory)
+            Bible2 = New ZefaniaXmlBible(System.IO.Path.Combine(System.Environment.CurrentDirectory, options.StandardBiblesDirectory, args.PathAdditionalSource), options.XsdSchemaDirectory)
             For MyAimedOrderCounter As Integer = DesiredBookOrderAndTranslation.Count - 1 To 0 Step -1
                 'Find book match in current bible
                 Dim MatchingBibleBookIndex As Integer = -1
@@ -130,12 +131,19 @@ Public Class BibleProcessor
         CompuMaster.Console.WriteLine("Output books coolection contains " & Bible.Books.Count & " books")
         CompuMaster.Console.WriteLine("Output books coolection's 1st book name: " & Bible.Books(0).BookName)
 
-        'Apply new bible meta information
-        Bible.BibleName = args.NewBibleName.Replace("{0}", Bible.BibleInfoTitle).Replace("{LEVEL}", 100)
-        Bible.BibleInfoTitle = args.NewBibleInfoTitle.Replace("{0}", Bible.BibleInfoTitle).Replace("{LEVEL}", 100)
-        Bible.BibleInfoIdentifier = args.NewBibleInfoIdentifier.Replace("{0}", Bible.BibleInfoIdentifier).Replace("{LEVEL}", 100)
-        Bible.BibleInfoDescription = args.NewBibleInfoDescription.Replace("{0}", Bible.BibleInfoDescription).Replace("{LEVEL}", 100)
+        'Cache source bible(s) meta information
+        Dim Bible1InfoCache As New ZefaniaXmlBibleInfoCache(Bible)
+        Dim Bible2InfoCache As ZefaniaXmlBibleInfoCache = Nothing
+        If Bible2 IsNot Nothing Then Bible2InfoCache = New ZefaniaXmlBibleInfoCache(Bible2)
 
+        'Apply new bible meta information
+        Bible.BibleInfoDate = Now.ToString("yyyy-MM-dd")
+        Bible.BibleName = ReplaceWithBibleInfos(args.NewBibleName.Replace("{0}", Bible1InfoCache.BibleInfoTitle), Bible1InfoCache, Bible2InfoCache, 100)
+        Bible.BibleInfoTitle = ReplaceWithBibleInfos(args.NewBibleInfoTitle.Replace("{NEWNAME}", Bible.BibleName).Replace("{0}", Bible1InfoCache.BibleInfoTitle), Bible1InfoCache, Bible2InfoCache, 100)
+        Bible.BibleInfoIdentifier = ReplaceWithBibleInfos(args.NewBibleInfoIdentifier.Replace("{0}", Bible1InfoCache.BibleInfoIdentifier), Bible1InfoCache, Bible2InfoCache, 100)
+        Bible.BibleInfoDescription = ReplaceWithBibleInfos(args.NewBibleInfoDescription.Replace("{0}", Bible1InfoCache.BibleInfoDescription), Bible1InfoCache, Bible2InfoCache, 100)
+        Bible.BibleInfoPublisher = "Kohelet-Network"
+        Bible.BibleInfoSource = "https://github.com/kohelet-net-admin/jewishbible/"
 
         'Save new bible
         Dim OutputFile As String = BibleOutputFilePath(args, options, 100, True)
@@ -143,6 +151,28 @@ Public Class BibleProcessor
         ZefaniaStatistics.ExportBibleBookNames(OutputFile & ".books.csv", Bible)
 
         Return Bible
+    End Function
+
+    Private Shared Function ReplaceWithBibleInfos(pattern As String, bible As ZefaniaXmlBibleInfoCache, bible2 As ZefaniaXmlBibleInfoCache, level As Integer) As String
+        Dim Result As String = pattern.
+            Replace("{LEVEL}", 100).
+            Replace("{TODAY}", Now.ToString("yyyy-MM-dd")).
+            Replace("{NAME1}", bible.BibleName).
+            Replace("{TITLE1}", bible.BibleInfoTitle).
+            Replace("{IDENTIFIER1}", bible.BibleInfoIdentifier).
+            Replace("{DESCRIPTION1}", bible.BibleInfoDescription).
+            Replace("{PUBLISHER1}", bible.BibleInfoPublisher).
+            Replace("{DATE1}", bible.BibleInfoDate)
+        If bible2 IsNot Nothing Then
+            Result = Result.
+                Replace("{NAME2}", bible2.BibleName).
+                Replace("{TITLE2}", bible2.BibleInfoTitle).
+                Replace("{IDENTIFIER2}", bible2.BibleInfoIdentifier).
+                Replace("{DESCRIPTION2}", bible2.BibleInfoDescription).
+                Replace("{PUBLISHER2}", bible2.BibleInfoPublisher).
+                Replace("{DATE2}", bible2.BibleInfoDate)
+        End If
+        Return Result
     End Function
 
     ''' <summary>

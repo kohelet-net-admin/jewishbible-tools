@@ -51,7 +51,7 @@ Module MainModule
             EnsureAvailableStringColumn(xmlFiles, "ZefaniaBibleType")
             EnsureAvailableStringColumn(xmlFiles, "ZefaniaBibleInfoTitle")
             EnsureAvailableStringColumn(xmlFiles, "ZefaniaBibleInfoIdentifier")
-            EnsureAvailableStringColumn(xmlFiles, "ZefaniaBibleInfoIdentifier")
+            EnsureAvailableStringColumn(xmlFiles, "ZefaniaBibleInfoContributors")
             EnsureAvailableStringColumn(xmlFiles, "ZefaniaBibleInfoCoverage")
             EnsureAvailableStringColumn(xmlFiles, "ZefaniaBibleInfoCreator")
             EnsureAvailableStringColumn(xmlFiles, "ZefaniaBibleInfoDate")
@@ -93,6 +93,7 @@ Module MainModule
                     XmlFile("ZefaniaBibleInfoTitle") = ZefaniaData.BibleInfoTitle
                     XmlFile("ZefaniaBibleInfoIdentifier") = ZefaniaData.BibleInfoIdentifier
                     XmlFile("ZefaniaBibleInfoCoverage") = ZefaniaData.BibleInfoCoverage
+                    XmlFile("ZefaniaBibleInfoContributors") = ZefaniaData.BibleInfoContributors
                     XmlFile("ZefaniaBibleInfoCreator") = ZefaniaData.BibleInfoCreator
                     XmlFile("ZefaniaBibleInfoDate") = ZefaniaData.BibleInfoDate
                     XmlFile("ZefaniaBibleInfoDescription") = ZefaniaData.BibleInfoDescription
