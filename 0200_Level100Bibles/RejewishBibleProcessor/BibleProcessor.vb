@@ -144,6 +144,7 @@ Public Class BibleProcessor
         Bible.BibleInfoDescription = ReplaceWithBibleInfos(args.NewBibleInfoDescription.Replace("{0}", Bible1InfoCache.BibleInfoDescription), Bible1InfoCache, Bible2InfoCache, 100)
         Bible.BibleInfoPublisher = "Kohelet-Network"
         Bible.BibleInfoSource = "https://github.com/kohelet-net-admin/jewishbible/"
+        Bible.BibleInfoFormat = "Zefania XML Bible Markup Language"
 
         'Save new bible
         Dim OutputFile As String = BibleOutputFilePath(args, options, 100, True)
