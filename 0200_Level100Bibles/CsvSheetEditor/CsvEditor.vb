@@ -17,19 +17,31 @@
         If Result = DialogResult.OK Then
             Dim CsvPath As String = Nothing
             CsvPath = Me.CsvOpenFileDialog.FileName
-            Try
-                Me.CsvDataGridView.DataSource = CompuMaster.Data.Csv.ReadDataTableFromCsvFile(CsvPath, True, CompuMaster.Data.Csv.ReadLineEncodings.RowBreakCrLfOrLf_CellLineBreakCr, CompuMaster.Data.Csv.ReadLineEncodingAutoConversion.NoAutoConversion, "UTF-8", ","c, """"c, False, False)
-                PathOfLoadedData = CsvPath
-                Me.SaveToolStripMenuItem.Enabled = True
-                Me.SaveasToolStripMenuItem.Enabled = True
-                Me.CsvDataGridView.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells)
-                Me.CsvDataGridView.AutoResizeRows(DataGridViewAutoSizeRowsMode.AllCells)
-            Catch ex As Exception
-                Me.CsvDataGridView.DataSource = Nothing
-                PathOfLoadedData = Nothing
-                MsgBox(ex.Message, MsgBoxStyle.Critical Or MsgBoxStyle.OkOnly)
-            End Try
+            LoadCsvFile(CsvPath)
         End If
+    End Sub
+
+    ''' <summary>
+    ''' Load a CSV file into the data grid
+    ''' </summary>
+    ''' <param name="csvPath"></param>
+    Private Sub LoadCsvFile(csvPath As String)
+        If System.IO.File.Exists(csvPath) = False Then
+            MsgBox("File not found: " & csvPath, MsgBoxStyle.Critical Or MsgBoxStyle.OkOnly)
+            Return
+        End If
+        Try
+            Me.CsvDataGridView.DataSource = CompuMaster.Data.Csv.ReadDataTableFromCsvFile(csvPath, True, CompuMaster.Data.Csv.ReadLineEncodings.RowBreakCrLfOrLf_CellLineBreakCr, CompuMaster.Data.Csv.ReadLineEncodingAutoConversion.NoAutoConversion, "UTF-8", ","c, """"c, False, False)
+            PathOfLoadedData = csvPath
+            Me.SaveToolStripMenuItem.Enabled = True
+            Me.SaveasToolStripMenuItem.Enabled = True
+            Me.CsvDataGridView.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells)
+            Me.CsvDataGridView.AutoResizeRows(DataGridViewAutoSizeRowsMode.AllCells)
+        Catch ex As Exception
+            Me.CsvDataGridView.DataSource = Nothing
+            PathOfLoadedData = Nothing
+            MsgBox(ex.Message, MsgBoxStyle.Critical Or MsgBoxStyle.OkOnly)
+        End Try
     End Sub
 
     Private Sub SaveToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SaveToolStripMenuItem.Click
@@ -90,4 +102,10 @@
         End If
     End Sub
 
+    Private Sub CsvEditor_Load(sender As Object, e As EventArgs) Handles Me.Load
+        If System.Environment.GetCommandLineArgs().Length > 1 Then
+            Dim FilePath As String = System.Environment.GetCommandLineArgs()(1)
+            LoadCsvFile(System.IO.Path.Combine(System.Environment.CurrentDirectory, FilePath))
+        End If
+    End Sub
 End Class

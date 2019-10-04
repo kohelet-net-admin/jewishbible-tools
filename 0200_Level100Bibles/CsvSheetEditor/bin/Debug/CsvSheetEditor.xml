@@ -22,6 +22,12 @@ CsvSheetEditor
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="M:CsvSheetEditor.CsvEditor.LoadCsvFile(System.String)">
+ <summary>
+ Load a CSV file into the data grid
+ </summary>
+ <param name="csvPath"></param>
+</member>
 <member name="M:CsvSheetEditor.CsvEditor.SaveCurrentCsvFileAs">
  <summary>
  Save the file at a new location
