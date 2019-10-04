@@ -30,7 +30,7 @@ Public Class BibleProcessor
         CompuMaster.Console.WriteLine("Bible language code: " & BibleLanguageCode)
 
         CompuMaster.Console.WriteLine("Loading ZefaniaXML")
-        Dim Bible As New KoheletNetwork.ZefaniaXmlBible(System.IO.Path.Combine(System.Environment.CurrentDirectory, options.StandardBiblesDirectory, args.Path), options.XsdSchemaDirectory)
+        Dim Bible As New KoheletNetwork.ZefaniaXmlBible(System.IO.Path.Combine(System.Environment.CurrentDirectory, options.StandardBiblesDirectory, args.Path), options.XsdSchemaDirectory, LookupLanguageCodeFromRelativePath(args.Path))
 
         Dim DesiredBookOrderAndTranslation As List(Of Level100Support.BookTranslation) = Level100Support.GetLevel100BookOrderWithTranslations(BibleLanguageCode, options)
         CompuMaster.Console.WriteLine("MasterBookOrderAndTranslation contains " & DesiredBookOrderAndTranslation.Count & " books")
@@ -41,7 +41,7 @@ Public Class BibleProcessor
         Dim Bible2 As ZefaniaXmlBible = Nothing
         If args.PathAdditionalSource <> Nothing Then
             'Fill up missing books from additional source
-            Bible2 = New ZefaniaXmlBible(System.IO.Path.Combine(System.Environment.CurrentDirectory, options.StandardBiblesDirectory, args.PathAdditionalSource), options.XsdSchemaDirectory)
+            Bible2 = New ZefaniaXmlBible(System.IO.Path.Combine(System.Environment.CurrentDirectory, options.StandardBiblesDirectory, args.PathAdditionalSource), options.XsdSchemaDirectory, LookupLanguageCodeFromRelativePath(args.PathAdditionalSource))
             For MyAimedOrderCounter As Integer = DesiredBookOrderAndTranslation.Count - 1 To 0 Step -1
                 'Find book match in current bible
                 Dim MatchingBibleBookIndex As Integer = -1
@@ -274,6 +274,20 @@ Public Class BibleProcessor
             End If
         End If
         Return Result
+    End Function
+
+    ''' <summary>
+    ''' Lookup the language code from a relative path like '.\ENG\American Standard Version\...'
+    ''' </summary>
+    ''' <param name="relPath"></param>
+    ''' <returns></returns>
+    Private Shared Function LookupLanguageCodeFromRelativePath(relPath As String) As String
+        Dim SplitUp As String() = relPath.Split(System.IO.Path.DirectorySeparatorChar, System.IO.Path.AltDirectorySeparatorChar)
+        If SplitUp(0) = "." Then
+            Return SplitUp(1)
+        Else
+            Return SplitUp(0)
+        End If
     End Function
 
 End Class
