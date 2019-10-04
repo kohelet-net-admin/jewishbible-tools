@@ -60,7 +60,7 @@ Module MainModule
             EnsureAvailableStringColumn(xmlFiles, "ZefaniaBibleInfoLanguage")
             EnsureAvailableStringColumn(xmlFiles, "ZefaniaBibleInfoPublisher")
             EnsureAvailableStringColumn(xmlFiles, "ZefaniaBibleInfoRights")
-            EnsureAvailableStringColumn(xmlFiles, "ZefaniaBibleInfoSources")
+            EnsureAvailableStringColumn(xmlFiles, "ZefaniaBibleInfoSource")
             EnsureAvailableStringColumn(xmlFiles, "ZefaniaBibleInfoSubject")
             EnsureAvailableStringColumn(xmlFiles, "ZefaniaBibleInfoType")
             EnsureAvailableStringColumn(xmlFiles, "BibleReJewishedLevel")
@@ -101,7 +101,7 @@ Module MainModule
                     XmlFile("ZefaniaBibleInfoLanguage") = ZefaniaData.BibleInfoLanguage
                     XmlFile("ZefaniaBibleInfoPublisher") = ZefaniaData.BibleInfoPublisher
                     XmlFile("ZefaniaBibleInfoRights") = ZefaniaData.BibleInfoRights
-                    XmlFile("ZefaniaBibleInfoSources") = ZefaniaData.BibleInfoSources
+                    XmlFile("ZefaniaBibleInfoSource") = ZefaniaData.BibleInfoSource
                     XmlFile("ZefaniaBibleInfoSubject") = ZefaniaData.BibleInfoSubject
                     XmlFile("ZefaniaBibleInfoType") = ZefaniaData.BibleInfoType
                     XmlFile("BibleReJewishedLevel") = "0"

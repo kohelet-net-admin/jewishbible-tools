@@ -28,6 +28,14 @@ ZefaniaXml.Data
  </summary>
  <returns></returns>
 </member>
+<member name="M:KoheletNetwork.ZefaniaXmlBible.PushBibleInfoHeadersToTopOfXmlDocument">
+ <summary>
+ Force the INFORMATION node to appear on top of the XML document
+ </summary>
+ <remarks>
+ After adding books, it may happen that the node INFORMATION is somewhere between several BIBLEBOOK nodes (especially after combining several bibles). This behaviour might already been considered as a bug.
+ </remarks>
+</member>
 <member name="P:KoheletNetwork.ZefaniaXmlBible.BibleWithoutCopyright">
  <summary>
  Is the current bible without copyright or similar protection
@@ -70,6 +78,12 @@ ZefaniaXml.Data
  </summary>
  <returns></returns>
 </member>
+<member name="M:KoheletNetwork.ZefaniaXmlBible.AddBook(KoheletNetwork.ZefaniaXmlBook)">
+ <summary>
+ Add a book to the Xml node list
+ </summary>
+ <param name="newBook"></param>
+</member>
 <member name="M:KoheletNetwork.ZefaniaXmlBible.ValidateDeeply">
  <summary>
  Validate the XmlDocument as well as internal data structure inclusive all child objects
@@ -103,6 +117,18 @@ ZefaniaXml.Data
 <member name="M:KoheletNetwork.ZefaniaXmlBible.ValidationEventHandlerExceptionToString">
  <summary>
  Convert an exception into a string
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXmlBibleInfoCache.BibleInfoTitle">
+ <summary>
+ Full bible name
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:KoheletNetwork.ZefaniaXmlBibleInfoCache.BibleInfoIdentifier">
+ <summary>
+ Unique identifier for bible name
  </summary>
  <returns></returns>
 </member>
@@ -153,6 +179,21 @@ ZefaniaXml.Data
  List of all available verses
  </summary>
  <returns></returns>
+</member>
+<member name="M:KoheletNetwork.ZefaniaXmlTools.WriteAttribute(System.Xml.XmlNode,System.String,System.String)">
+ <summary>
+ Set an attribute value to an existing XML node
+ </summary>
+ <param name="node"></param>
+ <param name="name"></param>
+ <param name="value"></param>
+</member>
+<member name="M:KoheletNetwork.ZefaniaXmlTools.WriteNodeContent(System.Xml.XmlNode,System.String)">
+ <summary>
+ Set a text value to an existing XML node
+ </summary>
+ <param name="node"></param>
+ <param name="value"></param>
 </member>
 <member name="P:KoheletNetwork.ZefaniaXmlVerse.ContentText">
  <summary>

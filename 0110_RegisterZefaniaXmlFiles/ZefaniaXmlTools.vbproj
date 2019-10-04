@@ -47,6 +47,9 @@
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>appicon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="CompuMaster.Console, Version=2017.10.11.107, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\CompuMaster.Console.2017.10.11.107\lib\net45\CompuMaster.Console.dll</HintPath>
@@ -131,6 +134,9 @@
       <Project>{c4adc7ca-c266-47a3-b38f-35a77818e146}</Project>
       <Name>ZefaniaXmlData</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="appicon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
