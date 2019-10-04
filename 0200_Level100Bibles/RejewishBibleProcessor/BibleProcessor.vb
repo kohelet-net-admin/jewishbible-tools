@@ -2,7 +2,23 @@
 
 Public Class BibleProcessor
 
+    ''' <summary>
+    ''' Create level 100 bible: Jewish structure of bible
+    ''' </summary>
+    ''' <param name="args">Bible processing configuration</param>
+    ''' <param name="options">Application's command line options</param>
+    ''' <returns>The created bible document with level 100</returns>
+    ''' <remarks>
+    ''' Milestones:
+    ''' <list type="number">
+    ''' <item>Names and order of books as in Hebrew bible/Tenakh (e. g. last book of OT is 2. Chronicles, books of Torah called by their Hebrew names</item>
+    ''' <item>Completeness of books as in Tenakh  (e. g. Maccabees), if necessary completion of a bible translation with parts of another alternative translation, which should be as close as possible to the origin translation style</item>
+    ''' <item>Order of chapters And numbering of chapters And verses as in Tenakh (possibly differs e.g. at Joel 4, order of psalms in Russan language bibles, etc.)</item>
+    ''' <item>Separation of Torah into Parashot, e.g.. by header according to scheme "Bereschit – In the beginning (%bookname 1, 1 - 5,45)"</item>
+    ''' </list>
+    ''' </remarks>
     Public Shared Function CreateLevel100Bible(args As Configuration.BibleToProcess, options As CommandlineOptions) As KoheletNetwork.ZefaniaXmlBible
+        CompuMaster.Console.WriteLine("IN PROCESS: Level 100: Jewish structure of bible")
         'Load additional context data
         Dim BibleLanguageCode As String
         If args.Path.StartsWith(".\") OrElse args.Path.StartsWith("./") Then
@@ -131,6 +147,9 @@ Public Class BibleProcessor
         CompuMaster.Console.WriteLine("Output books coolection contains " & Bible.Books.Count & " books")
         CompuMaster.Console.WriteLine("Output books coolection's 1st book name: " & Bible.Books(0).BookName)
 
+        '<CAPTION vref="1" type="x-h2" count="146">Bereschit בראשית (Gen 1,1-6,8)</CAPTION>
+        'Bible.Books(0).Chapters(0).Captions.Add(New ZefaniaXmlCaption()...)
+
         'Cache source bible(s) meta information
         Dim Bible1InfoCache As New ZefaniaXmlBibleInfoCache(Bible)
         Dim Bible2InfoCache As ZefaniaXmlBibleInfoCache = Nothing
@@ -154,9 +173,67 @@ Public Class BibleProcessor
         Return Bible
     End Function
 
+    ''' <summary>
+    ''' Create level 200 bible: Jewish names and terms
+    ''' </summary>
+    ''' <param name="args">Bible processing configuration</param>
+    ''' <param name="options">Application's command line options</param>
+    ''' <returns>The created bible document with level 200</returns>
+    ''' <remarks>
+    ''' Milestones:
+    ''' <list type="number">
+    ''' <item>Names of God stay in their Hebrew term (e.g. Elohim, JHWH instead of God, Lord) with origin/classic term of the Christian translation as foot note</item>
+    ''' <item>Names of persons And locations stay in their Hebrew term (e.g. Jeschajahu statt Jesaja) with origin/classic term of the Christian translation as foot note</item>
+    ''' <item>Fixed terms In their Hebrew version (e.g. “Talmidim” instead of “Disciples”) With origin/classic term of the Christian translation As foot note</item>
+    ''' </list>
+    ''' </remarks>
+    Public Shared Function CreateLevel200Bible(level100Bible As KoheletNetwork.ZefaniaXmlBible, args As Configuration.BibleToProcess, options As CommandlineOptions) As KoheletNetwork.ZefaniaXmlBible
+        CompuMaster.Console.WarnLine("NOT YET IMPLEMENTED: Level 200: Jewish names and terms")
+        Return Nothing
+
+        'Wording: אֱלֹהִים, אלהים
+        'Start replacement wit BHS with Masoretics and missing NT
+        'or start replacement with HEBM without Masoretics in whole bible, with NT, but maybe with continuous changes due to language evolution?
+        'HEB\Modern Hebrew Bible\SF_2009-01-23_HEB_HEBM_(MODERN HEBREW BIBLE).xml
+        'HEB\Biblia hebraica\SF_2009-01-20_HEB_BHS_(BIBLIA HEBRAICA).xml
+    End Function
+
+    ''' <summary>
+    ''' Create level 300 bible: Theological and scientific correctness
+    ''' </summary>
+    ''' <param name="args">Bible processing configuration</param>
+    ''' <param name="options">Application's command line options</param>
+    ''' <returns>The created bible document with level 300</returns>
+    ''' <remarks>
+    ''' Milestones:
+    ''' <list type="number">
+    ''' <item>Theological corrections as by latest science knowledge (e.g. sometimes old Christian bible templates contain some incorrectnesses – partially already fixed in their newer revisions)</item>
+    ''' <item>Theological corrections as by Messianic/Jewish view on scripture (e.g. “Shabbat” instead of “7th day”)</item>
+    ''' </list>
+    ''' </remarks>
+    Public Shared Function CreateLevel300Bible(level200Bible As KoheletNetwork.ZefaniaXmlBible, args As Configuration.BibleToProcess, options As CommandlineOptions) As KoheletNetwork.ZefaniaXmlBible
+        CompuMaster.Console.WarnLine("NOT YET IMPLEMENTED: Level 300: Theological and scientific correctness")
+        Return Nothing
+    End Function
+
+    ''' <summary>
+    ''' Update template text with placeholders from configuration data by bible meta information
+    ''' </summary>
+    ''' <param name="pattern"></param>
+    ''' <param name="bible"></param>
+    ''' <param name="bible2"></param>
+    ''' <param name="level">100, 200 or 300</param>
+    ''' <returns></returns>
     Private Shared Function ReplaceWithBibleInfos(pattern As String, bible As ZefaniaXmlBibleInfoCache, bible2 As ZefaniaXmlBibleInfoCache, level As Integer) As String
+        'Arguments validation
+        Select Case level
+            Case 100, 200, 300
+            Case Else
+                Throw New ArgumentOutOfRangeException("Level must be 100, 200 or 300")
+        End Select
+        'Replace all variables in given pattern with bible meta data
         Dim Result As String = pattern.
-            Replace("{LEVEL}", 100).
+            Replace("{LEVEL}", level).
             Replace("{TODAY}", Now.ToString("yyyy-MM-dd")).
             Replace("{NAME1}", bible.BibleName).
             Replace("{TITLE1}", bible.BibleInfoTitle).

@@ -42,8 +42,10 @@ Module MainModule
                     Try
                         CompuMaster.Console.WriteLine()
                         CompuMaster.Console.WriteLine("Bible in process: " & ProcessorConfig.BiblesToProcess(MyCounter).Path)
-                        Dim Bible As KoheletNetwork.ZefaniaXmlBible
-                        Bible = BibleProcessor.CreateLevel100Bible(ProcessorConfig.BiblesToProcess(MyCounter), options)
+                        Dim BibleLevel100, BibleLevel200, BibleLevel300 As KoheletNetwork.ZefaniaXmlBible
+                        BibleLevel100 = BibleProcessor.CreateLevel100Bible(ProcessorConfig.BiblesToProcess(MyCounter), options)
+                        BibleLevel200 = BibleProcessor.CreateLevel200Bible(BibleLevel100, ProcessorConfig.BiblesToProcess(MyCounter), options)
+                        BibleLevel300 = BibleProcessor.CreateLevel200Bible(BibleLevel200, ProcessorConfig.BiblesToProcess(MyCounter), options)
                     Catch ex As Exception
                         If options.Verbose Then
                             CompuMaster.Console.WarnLine("ERROR: " & ex.ToString)
